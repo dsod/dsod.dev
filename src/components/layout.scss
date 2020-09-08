@@ -1,0 +1,61 @@
+$accent-color: #0082d8;
+$light-color: #e2e2e2;
+$dark-color: #262626;
+
+body {
+  background-color: $dark-color;
+  color: $light-color;
+  font-family: Montserrat;
+  font-weight: normal;
+}
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+footer {
+  background-color: black;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: 50px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Work Sans;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+p,
+a {
+  font-size: 14px;
+}
+
+a {
+  color: #0082d8;
+}
+
+.font-color-accent {
+  color: $accent-color;
+}

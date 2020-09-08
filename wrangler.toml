@@ -3,7 +3,7 @@ type = "webpack"
 workers_dev = false
 
 [env.production]
-route = "dsod.dev/*"
+route = "*dsod.dev/*"
 
 [site]
 bucket = "./public"

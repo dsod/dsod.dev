@@ -1,14 +1,10 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import ProfileImage from "./images/profile"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div
       style={{
         margin: `0 auto`,
@@ -16,17 +12,19 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <h1>Hi.</h1>
+      <h3>
+        I am <span className="font-color-accent">Daniel!</span>
+      </h3>
+    </div>
+    <div
+      style={{
+        margin: `0 auto`,
+        width: 200,
+        padding: `1.45rem 1.0875rem`,
+      }}
+    >
+      <ProfileImage />
     </div>
   </header>
 )
