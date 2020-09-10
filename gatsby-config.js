@@ -14,7 +14,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 90,
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
