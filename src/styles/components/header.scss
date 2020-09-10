@@ -1,0 +1,14 @@
+@import "~rfs/scss";
+
+header {
+  height: 100vh;
+}
+
+.title {
+  & h1 {
+    @include font-size(6rem);
+  }
+  & h2 {
+    @include font-size(4rem);
+  }
+}

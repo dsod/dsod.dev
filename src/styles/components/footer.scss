@@ -1,0 +1,6 @@
+@import "~rfs/scss";
+
+footer {
+  background-color: black;
+  @include padding-top(10rem);
+}

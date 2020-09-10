@@ -1,0 +1,24 @@
+// Colors
+$color-accent: #0082d8;
+$color-light: #e2e2e2;
+$color-dark: #262626;
+$body-bg: $color-dark;
+$body-color: $color-light;
+
+// Bootstrap grid configuration
+$grid-columns: 8;
+
+// Bootstrap Native Font stack configuration
+$rfs-base-value: 14px;
+$font-size-base: 1rem;
+$font-family-base: Montserrat, Tahoma, Helvetica, sans-serif;
+
+// Headings
+$headings-font-family: Work Sans, Tahoma, Helvetica, sans-serif;
+$headings-font-weight: 300;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
