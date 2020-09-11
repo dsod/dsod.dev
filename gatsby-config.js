@@ -24,10 +24,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Work Sans\:300`, `Montserrat\:400`],
+        fonts: [`Work Sans\:300,400`, `Montserrat\:400`],
         display: "swap",
       },
     },
     `gatsby-alias-imports`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/src/images/icons`,
+        },
+      },
+    },
   ],
 }

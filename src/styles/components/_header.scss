@@ -1,0 +1,112 @@
+@import "../variables";
+
+header {
+  height: 100vh;
+  background: rgb(32, 32, 32);
+  background: linear-gradient(
+    31deg,
+    rgba(32, 32, 32, 1) 0%,
+    rgba(54, 54, 54, 1) 100%
+  );
+
+  .header-wrapper {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(lg) {
+      height: 700px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      > * {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+
+    & h1 {
+      @include font-size(6rem);
+      text-indent: -8px;
+    }
+    & h2 {
+      @include font-size(4rem);
+      text-indent: -5px;
+    }
+  }
+
+  .lead-wrapper {
+    order: 1;
+    justify-content: center;
+
+    .lead {
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(lg) {
+      order: 0;
+
+      .lead {
+        text-align: left;
+      }
+    }
+  }
+
+  .picture {
+    max-width: 500px;
+    @include margin-top(2rem);
+    @include margin-bottom(2rem);
+  }
+
+  .break {
+    flex-basis: 100%;
+  }
+
+  .card {
+    color: $color-dark;
+    border: 1px solid $color-accent;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+    @include margin-top(4rem);
+    width: 350px;
+
+    @include media-breakpoint-down(lg) {
+      width: auto;
+    }
+
+    h5 {
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .card-header {
+      border-bottom: 1px solid $color-accent;
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 1rem;
+
+      li {
+        @include margin-top(0.2rem);
+        @include margin-bottom(0.2rem);
+      }
+
+      svg {
+        position: absolute;
+        left: 0.5rem;
+        margin: 0 0.5rem;
+        height: 20px;
+      }
+    }
+  }
+}
