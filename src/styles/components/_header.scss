@@ -1,7 +1,7 @@
 @import "../variables";
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   background: rgb(32, 32, 32);
   background: linear-gradient(
     31deg,
@@ -16,6 +16,8 @@ header {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    @include margin-top(4rem);
+    @include margin-bottom(4rem);
 
     @include media-breakpoint-up(lg) {
       height: 700px;
