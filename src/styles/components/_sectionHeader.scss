@@ -1,0 +1,10 @@
+.section-header {
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(00, 130, 216, 1) 0%,
+      rgba(00, 130, 216, 0) 100%
+    )
+    1;
+  @include padding-top(3rem);
+}
