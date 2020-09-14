@@ -1,0 +1,36 @@
+[
+  {
+    "role": "Restaurant Manager",
+    "learnings": ["Business Economy", "Leadership", "Recruiting"]
+  },
+  {
+    "role": "Application Specialist",
+    "learnings": [
+      "IT Fundamentals",
+      "1st & 2nd-line support",
+      "Problem Solving",
+      "Customer On-boarding",
+      "Integration Projects"
+    ]
+  },
+  {
+    "role": "Service Delivery Manager",
+    "learnings": ["ITIL Basics", "Project Management"]
+  },
+  {
+    "role": "Head of Delivery",
+    "learnings": ["Senior Project Manager", "Presale"]
+  },
+  {
+    "role": "Nordic Channel Sales Manager",
+    "learnings": ["Sales", "Partner Strategies", "CMS Configuration"]
+  },
+  {
+    "role": "Integration Manager",
+    "learnings": [
+      "Solution Achritecture",
+      "Quality Assurement",
+      "Issue Prioritizing"
+    ]
+  }
+]

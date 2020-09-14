@@ -1,0 +1,190 @@
+$timeline-width: 6px;
+
+.timeline {
+  position: absolute;
+  left: calc(50% - #{$timeline-width});
+  background-color: $color-gray;
+  min-height: 12rem;
+  width: $timeline-width;
+  border-radius: 2px;
+  transition: height 0.3s;
+
+  @for $i from 1 through 10 {
+    &-height-#{$i} {
+      height: calc(12rem * #{$i});
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    @include margin-top(3rem);
+    @include margin-bottom(3rem);
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &-active {
+    position: absolute;
+    left: calc(50% - #{$timeline-width});
+    top: 0rem;
+    background: rgb(103, 105, 110);
+    background: linear-gradient(
+      180deg,
+      rgba(103, 105, 110, 1) 0%,
+      rgba(0, 130, 216, 1) 50%,
+      rgba(103, 105, 110, 1) 100%
+    );
+    height: 18rem;
+    width: $timeline-width;
+    border-radius: 2px;
+    opacity: 0;
+    transition: top 0.3s, visibility 0s, opacity 0.3s ease-in-out, top 0.3s;
+
+    @for $i from 1 through 10 {
+      &.active-#{$i} {
+        top: calc((#{$i} - 1) * 11.5rem);
+      }
+    }
+
+    & .center {
+      visibility: hidden;
+      opacity: 0;
+      width: $timeline-width;
+      height: $timeline-width;
+      border-radius: 50%;
+      background-color: $color-light;
+      border: solid 1px $color-accent-dark;
+      box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      transition: width 0.3s, border-radius 0.3s, left 0.3s, height 0.3s,
+        visibility 0s, opacity 0.3s ease-in-out;
+    }
+  }
+
+  &-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11.5rem;
+    transition: height 0.3s;
+
+    h5,
+    p {
+      color: $color-gray;
+      transition: color 0.3s;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .learnings {
+      position: relative;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    &.active {
+      height: 18rem;
+
+      h5,
+      p {
+        color: $color-accent;
+      }
+
+      & ~ .timeline-active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @for $i from 1 through 10 {
+        & ~ .timeline-height-#{$i} {
+          height: calc((12rem * #{$i}) + 6rem);
+        }
+      }
+    }
+  }
+
+  &-section-left {
+    h5 {
+      right: 55%;
+      order: 2;
+      text-align: right;
+      transition: right 0.3s;
+    }
+
+    &.active {
+      h5 {
+        right: 58%;
+      }
+    }
+
+    .learnings {
+      left: 55%;
+      order: 1;
+    }
+
+    &.active ~ .timeline-active > .center {
+      visibility: visible;
+      border-radius: 2px;
+      width: 2rem;
+      left: calc((#{$timeline-width} / 2) - 2rem);
+      height: 4px;
+      opacity: 1;
+    }
+
+    &.active > .learnings {
+      visibility: visible;
+      opacity: 1;
+
+      svg {
+        height: 22px;
+        left: -0.3rem;
+      }
+    }
+  }
+  &-section-right {
+    h5 {
+      left: 55%;
+      order: 1;
+      transition: left 0.3s;
+    }
+
+    &.active {
+      h5 {
+        left: 58%;
+      }
+    }
+
+    .learnings {
+      right: 55%;
+      order: 2;
+      text-align: right;
+    }
+
+    &.active ~ .timeline-active > .center {
+      visibility: visible;
+      border-radius: 2px;
+      width: 2rem;
+      left: $timeline-width / 2;
+      height: 4px;
+      opacity: 1;
+    }
+
+    &.active > .learnings {
+      visibility: visible;
+      opacity: 1;
+      padding-left: 0;
+      padding-right: 1rem;
+
+      svg {
+        height: 22px;
+        right: -0.4rem;
+        left: unset;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

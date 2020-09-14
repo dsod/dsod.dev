@@ -4,7 +4,7 @@ import Layout from "../layout/layout"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 import About from "../components/about"
-import Experience from "../components/experience"
+import Experience from "../components/Experience/Experience"
 import Skills from "../components/Skills/skills"
 import Projects from "../components/projects"
 
