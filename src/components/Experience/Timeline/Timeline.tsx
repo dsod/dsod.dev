@@ -1,108 +1,74 @@
-import React, { useEffect, useState } from "react"
-import Experiences from "../../../content/experiences.json"
-import { elementInMiddleOfViewport } from "../../../util/scroll"
-import ListIcon from "images/icons/list-item.svg"
+import React, { createRef, useLayoutEffect, useMemo, useRef } from 'react';
+import Experiences from 'content/experiences.json';
+import ListIcon from 'images/icons/list-item.svg';
+import { useElementMiddleOfViewport } from 'hooks/useElementMiddleOfViewport';
 
-type TimelineScrollState = {
-  element: HTMLElement
-  middleOfViewport?: boolean
-  active: boolean
-  changeCssState: boolean
-}[]
+type ElementActiveStatus = {
+    currentlyMiddleOfViewport: boolean;
+    previouslyMiddleOfViewport: boolean;
+};
+
+type Section = (section: React.RefObject<HTMLDivElement>, index: number) => void;
 
 const Timeline: React.FC = () => {
-  useEffect(() => {
-    const wrapper = document.getElementById("timeline")
-    const sections = wrapper?.getElementsByClassName("timeline-section")
-    const timelineSections = Array.prototype.map.call(sections, section => ({
-      element: section,
-      middleOfViewport: false,
-      active: false,
-      changeCssState: false,
-    })) as TimelineScrollState
-    window.addEventListener(
-      "scroll",
-      () => handleScrollTimer(timelineSections),
-      {
-        passive: true,
-      }
-    )
+    const sectionElements: React.RefObject<HTMLDivElement>[] = useMemo(
+        () => Array.from({ length: Experiences.length }).map(() => createRef()),
+        []
+    );
+    const timelineElement: React.RefObject<HTMLDivElement> = useRef(null);
 
-    return window.removeEventListener("scroll", () =>
-      handleScrollTimer(timelineSections)
-    )
-  }, [])
+    useLayoutEffect(() => {
+        sectionElements.map((section, index) => {
+            listenForActiveSection(section, index);
+        });
+    });
 
-  let timer: number
-  const handleScrollTimer = (timelineSections: TimelineScrollState) => {
-    if (timer) {
-      window.clearTimeout(timer)
-    }
+    const listenForActiveSection: Section = (section, index) => {
+        useElementMiddleOfViewport(
+            ({ currentlyMiddleOfViewport, previouslyMiddleOfViewport }: ElementActiveStatus) => {
+                if (currentlyMiddleOfViewport === previouslyMiddleOfViewport) return;
+                handleActiveSection(section, index);
+            },
+            section.current!,
+            0
+        );
+    };
 
-    timer = window.setTimeout(() => handleScroll(timelineSections), 50)
-  }
+    const handleActiveSection: Section = (section, index) => {
+        section.current?.classList.toggle('active');
 
-  const handleScroll = (timelineSections: TimelineScrollState) => {
-    timelineSections.map(timeline => {
-      const cacheMiddleOfViewport = timeline.middleOfViewport
-      timeline.middleOfViewport = elementInMiddleOfViewport(timeline.element)
-      timeline.changeCssState =
-        cacheMiddleOfViewport != timeline.middleOfViewport
-    })
-    const changeStateOn = timelineSections.filter(
-      section => section.changeCssState
-    )
-    if (changeStateOn.length) {
-      changeStateOn.forEach(section => {
-        if (section.active) {
-          section.element.classList.remove("active")
-        } else {
-          section.element.classList.add("active")
-        }
-        section.active = !section.active
-      })
+        timelineElement.current?.classList.toggle(`active-${index + 1}`);
+    };
 
-      const indexOfActiveSection = timelineSections.findIndex(
-        section => section.active
-      )
-
-      const timeline = document.getElementsByClassName("timeline-active")[0]
-      const secondClass = timeline.classList.item(1)
-      secondClass ? timeline.classList.remove(secondClass) : null
-      indexOfActiveSection >= 0
-        ? timeline.classList.add(`active-${indexOfActiveSection + 1}`)
-        : null
-    }
-  }
-
-  return (
-    <div id="timeline" className="timeline-wrapper">
-      {Experiences.map((data, index) => {
-        let style: string
-        index % 2 === 0
-          ? (style = "timeline-section timeline-section-right")
-          : (style = "timeline-section timeline-section-left")
-        return (
-          <div key={`experience_${index}`} className={style}>
-            <h5>{data.role}</h5>
-            <ul className="learnings">
-              {data.learnings.map(learning => {
+    return (
+        <div id='timeline' className='timeline-wrapper'>
+            {Experiences.map((data, index) => {
+                let style: string;
+                index % 2 === 0
+                    ? (style = 'timeline-section timeline-section-right')
+                    : (style = 'timeline-section timeline-section-left');
                 return (
-                  <li>
-                    <ListIcon />
-                    {learning}
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        )
-      })}
-      <div className={`timeline timeline-height-${Experiences.length}`}></div>
-      <div className={`timeline-active`}>
-        <div className="center"></div>
-      </div>
-    </div>
-  )
-}
-export default Timeline
+                    <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
+                        <h5>{data.role}</h5>
+                        <ul className='learnings'>
+                            {data.learnings.map((learning, index) => {
+                                return (
+                                    <li key={`list_item_${index}`}>
+                                        <ListIcon />
+                                        {learning}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                );
+            })}
+            <div className={`timeline timeline-height-${Experiences.length}`}></div>
+            <div className={`timeline-active`} ref={timelineElement}>
+                <div className='center'></div>
+            </div>
+        </div>
+    );
+};
+
+export default Timeline;

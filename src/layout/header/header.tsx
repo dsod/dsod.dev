@@ -18,7 +18,7 @@ const Header = () => (
             </div>
           </div>
         </div>
-        <div className="lead-wrapper col-5 col-lg-4">
+        <div className="lead-wrapper col-6 col-lg-4">
           <div className="col-lg-8">
             <p className="lead">Software development is my newfound passion</p>
           </div>
@@ -41,7 +41,7 @@ const Header = () => (
           </div>
         </div>
 
-        <div className="picture col-5 col-lg-4">
+        <div className="picture col-6 col-lg-4">
           <ProfileImage />
         </div>
       </div>

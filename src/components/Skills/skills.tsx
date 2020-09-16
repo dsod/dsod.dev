@@ -5,7 +5,7 @@ import SkillListItem from "./SkillListItem"
 const Skills = () => (
   <section className="container">
     <div className="row justify-content-center">
-      <div className="col-6 col-md-5 col-lg-4 position-relative">
+      <div className="col-7 col-md-6 col-lg-5 position-relative">
         <SectionHeader section="Skills" />
         <ul>
           <SkillListItem listItem="Problem Solving">

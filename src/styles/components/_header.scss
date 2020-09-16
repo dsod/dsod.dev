@@ -38,11 +38,11 @@ header {
 
     & h1 {
       @include font-size(6rem);
-      text-indent: -8px;
+      text-indent: -6px;
     }
     & h2 {
       @include font-size(4rem);
-      text-indent: -5px;
+      text-indent: -4px;
     }
   }
 

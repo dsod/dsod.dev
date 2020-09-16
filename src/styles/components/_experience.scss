@@ -38,7 +38,7 @@ $timeline-width: 6px;
     width: $timeline-width;
     border-radius: 2px;
     opacity: 0;
-    transition: top 0.3s, visibility 0s, opacity 0.3s ease-in-out, top 0.3s;
+    transition: top 0.1s, visibility 0s, opacity 0.3s ease-in-out, top 0.3s;
 
     @for $i from 1 through 10 {
       &.active-#{$i} {
@@ -112,7 +112,7 @@ $timeline-width: 6px;
       right: 55%;
       order: 2;
       text-align: right;
-      transition: right 0.3s;
+      transition: right 0.1s;
     }
 
     &.active {
@@ -129,10 +129,15 @@ $timeline-width: 6px;
     &.active ~ .timeline-active > .center {
       visibility: visible;
       border-radius: 2px;
-      width: 2rem;
-      left: calc((#{$timeline-width} / 2) - 2rem);
+      width: 1rem;
+      left: calc((#{$timeline-width} / 2) - 1rem);
       height: 4px;
       opacity: 1;
+
+      @include media-breakpoint-up(md) {
+        left: calc((#{$timeline-width} / 2) - 2rem);
+        width: 2rem;
+      }
     }
 
     &.active > .learnings {
@@ -149,7 +154,7 @@ $timeline-width: 6px;
     h5 {
       left: 55%;
       order: 1;
-      transition: left 0.3s;
+      transition: left 0.1s;
     }
 
     &.active {
@@ -167,10 +172,14 @@ $timeline-width: 6px;
     &.active ~ .timeline-active > .center {
       visibility: visible;
       border-radius: 2px;
-      width: 2rem;
+      width: 1rem;
       left: $timeline-width / 2;
       height: 4px;
       opacity: 1;
+
+      @include media-breakpoint-up(md) {
+        width: 2rem;
+      }
     }
 
     &.active > .learnings {

@@ -1,5 +1,6 @@
 .section-header {
-  border-bottom: 1px solid;
+  border-bottom: solid;
+  border-width: 0 0 1px 0;
   border-image: linear-gradient(
       90deg,
       rgba(00, 130, 216, 1) 0%,
