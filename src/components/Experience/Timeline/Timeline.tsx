@@ -1,52 +1,49 @@
-import React, { createRef, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { createRef, useMemo, useState } from 'react';
 import Experiences from 'content/experiences.json';
 import ListIcon from 'images/icons/list-item.svg';
-import { useElementMiddleOfViewport } from 'hooks/useElementMiddleOfViewport';
-
-type ElementActiveStatus = {
-    currentlyMiddleOfViewport: boolean;
-    previouslyMiddleOfViewport: boolean;
-};
-
-type Section = (section: React.RefObject<HTMLDivElement>, index: number) => void;
+import { useOnScroll } from 'hooks/useOnScroll';
 
 const Timeline: React.FC = () => {
+    console.log('Timeline was rendered...');
     const sectionElements: React.RefObject<HTMLDivElement>[] = useMemo(
         () => Array.from({ length: Experiences.length }).map(() => createRef()),
         []
     );
-    const timelineElement: React.RefObject<HTMLDivElement> = useRef(null);
 
-    useLayoutEffect(() => {
-        sectionElements.map((section, index) => {
-            listenForActiveSection(section, index);
-        });
-    });
+    const [activeSection, setActiveSection] = useState(-1);
 
-    const listenForActiveSection: Section = (section, index) => {
-        useElementMiddleOfViewport(
-            ({ currentlyMiddleOfViewport, previouslyMiddleOfViewport }: ElementActiveStatus) => {
-                if (currentlyMiddleOfViewport === previouslyMiddleOfViewport) return;
-                handleActiveSection(section, index);
-            },
-            section.current!,
-            11
-        );
-    };
+    useOnScroll(
+        () => {
+            const middleOfViewport = window.innerHeight / 2;
+            sectionElements.map((section, index) => {
+                const sectionPosition = section.current?.getBoundingClientRect();
+                const sectionMiddleOfViewport =
+                    sectionPosition!.top <= middleOfViewport &&
+                    sectionPosition!.bottom >= middleOfViewport;
 
-    const handleActiveSection: Section = (section, index) => {
-        section.current?.classList.toggle('active');
-
-        timelineElement.current?.classList.toggle(`active-${index + 1}`);
-    };
+                if (sectionMiddleOfViewport && activeSection != index) {
+                    setActiveSection(index);
+                } else if (!sectionMiddleOfViewport && activeSection === index) {
+                    setActiveSection(-1);
+                }
+            });
+        },
+        [activeSection],
+        40
+    );
 
     return (
         <div id='timeline' className='timeline-wrapper'>
             {Experiences.map((data, index) => {
                 let style: string;
                 index % 2 === 0
-                    ? (style = 'timeline-section timeline-section-right')
-                    : (style = 'timeline-section timeline-section-left');
+                    ? (style = `timeline-section timeline-section-right ${
+                          index === activeSection ? 'active' : ''
+                      }`)
+                    : (style = `timeline-section timeline-section-left ${
+                          index === activeSection ? 'active' : ''
+                      }`);
+
                 return (
                     <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
                         <h5>{data.role}</h5>
@@ -64,7 +61,12 @@ const Timeline: React.FC = () => {
                 );
             })}
             <div className={`timeline timeline-height-${Experiences.length}`}></div>
-            <div className={`timeline-active`} ref={timelineElement}>
+
+            <div
+                className={`timeline-active ${
+                    activeSection >= 0 ? `active-${activeSection + 1}` : ''
+                }`}
+            >
                 <div className='center'></div>
             </div>
         </div>
