@@ -30,7 +30,7 @@ const Timeline: React.FC = () => {
                 handleActiveSection(section, index);
             },
             section.current!,
-            0
+            11
         );
     };
 
