@@ -13,14 +13,15 @@ const useOnScroll: UseScrollPositionType = (effect, dependencies, wait?) => {
     useLayoutEffect(() => {
         const handleScroll = () => {
             if (!timerId.current) {
-                timerId.current = setTimeout(runOnScroll, wait);
+                timerId.current = window.setTimeout(runOnScroll, wait);
             }
         };
 
         window.addEventListener('scroll', handleScroll);
 
         return () => (
-            window.removeEventListener('scroll', handleScroll), clearTimeout(timerId.current)
+            window.removeEventListener('scroll', handleScroll),
+            window.clearTimeout(timerId.current!)
         );
     }, dependencies);
 };

@@ -46,7 +46,7 @@ const Timeline: React.FC = () => {
 
                 return (
                     <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
-                        <h5>{data.role}</h5>
+                        <h5 className='role'>{data.role}</h5>
                         <ul className='learnings'>
                             {data.learnings.map((learning, index) => {
                                 return (
