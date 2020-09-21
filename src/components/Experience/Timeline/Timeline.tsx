@@ -4,7 +4,6 @@ import ListIcon from 'images/icons/list-item.svg';
 import { useOnScroll } from 'hooks/useOnScroll';
 
 const Timeline: React.FC = () => {
-    console.log('Timeline was rendered...');
     const sectionElements: React.RefObject<HTMLDivElement>[] = useMemo(
         () => Array.from({ length: Experiences.length }).map(() => createRef()),
         []

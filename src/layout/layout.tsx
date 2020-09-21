@@ -1,32 +1,26 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header/header"
-import Footer from "./footer/footer"
+import Header from './header/header';
+import Footer from './footer/footer';
+import Navigation from 'components/Navigation/Navigation';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout: React.FC = ({ children }) => {
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
-}
+
+    return (
+        <>
+            <Navigation />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+        </>
+    );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+    children: PropTypes.node.isRequired,
+};
 
-export default Layout
+export default Layout;

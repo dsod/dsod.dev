@@ -1,0 +1,19 @@
+$progressbar-width: 3px;
+
+.progressbar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: $progressbar-width;
+    left: 0px;
+    content: '';
+    background-color: $color-dark;
+
+    &-progress {
+        position: absolute;
+        background-color: $color-accent;
+        width: $progressbar-width;
+        height: 0;
+        transition: height 0.1s ease-out;
+    }
+}

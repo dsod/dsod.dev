@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Home",
+        "href": "#header",
+        "icon": "home-icon.svg"
+    },
+    {
+        "name": "About",
+        "href": "#about",
+        "icon": "about-icon.svg"
+    },
+    {
+        "name": "Experiences",
+        "href": "#experience",
+        "icon": "star-icon.svg"
+    },
+    {
+        "name": "Skills",
+        "href": "#skills",
+        "icon": "cog-icon.svg"
+    },
+    {
+        "name": "Projects",
+        "href": "#projects",
+        "icon": "projects-icon.svg"
+    }
+]

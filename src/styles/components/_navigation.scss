@@ -1,0 +1,107 @@
+$navigation-width: 130px;
+$navigation-gutter: 1rem;
+
+body {
+    margin: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-left: $navigation-width;
+    }
+
+    header {
+        padding-left: $navigation-gutter;
+    }
+}
+
+.navigation {
+    &-wrapper {
+        position: fixed;
+        display: flex;
+        flex-flow: column wrap;
+        height: 100vh;
+        width: $navigation-width;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        background-color: $color-dark;
+        border-right: 1px solid black;
+        z-index: 10;
+        box-shadow: 5px 0px 20px -12px rgba(0, 0, 0, 0.5);
+
+        @include media-breakpoint-down(md) {
+            bottom: 0px;
+            right: 0px;
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+nav {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    padding: $navigation-gutter;
+
+    ul {
+        padding: 0;
+        height: 100%;
+
+        svg {
+            position: relative;
+            left: 0;
+            margin: 4rem 0 0 0;
+            height: 2rem;
+            width: 2rem;
+            stroke: $color-low-profile;
+            stroke-width: 0.75rem;
+            transition: stroke 0.2s, height 0.1s;
+        }
+
+        a {
+            display: block;
+            margin: 1rem 0rem 4rem 0;
+            color: $color-low-profile;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        li {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                > a {
+                    color: $color-light;
+                }
+
+                > svg {
+                    stroke: $color-light;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+            }
+
+            &.active {
+                > a {
+                    color: $color-accent;
+                }
+
+                > svg {
+                    stroke: $color-accent;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+            }
+        }
+
+        .nav-separator {
+            width: 100%;
+            background-color: black;
+            height: 1px;
+            box-shadow: inset 0 0 2px 0px $color-dark;
+        }
+    }
+}
