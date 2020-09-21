@@ -19,10 +19,11 @@ const Navigation: React.FC = () => {
         []
     );
 
-    const [activeSection, setActiveSection] = useState(-1);
+    const [activeSection, setActiveSection] = useState(0);
+    const [navigationOpen, setNavigationOpen] = useState<boolean>(false);
 
     const pageSections = useRef<SectionPositions>();
-    const middleOfViewport = window.innerHeight * 0.2
+    const activeSectionBreakpoint = window.innerHeight * 0.2
 
 
     useLayoutEffect(() => {
@@ -41,7 +42,7 @@ const Navigation: React.FC = () => {
     useOnScroll(() => {
         if (!pageSections.current) return
 
-        const currentBreakpoint = window.scrollY + middleOfViewport;
+        const currentBreakpoint = window.scrollY + activeSectionBreakpoint;
         pageSections.current.forEach((section, index) => {
             console.log(`currentBreakpoint: ${currentBreakpoint}, section: ${section.offsetTop}`)
             if (currentBreakpoint > section.offsetTop && currentBreakpoint < (section.offsetTop + section.height)) {
@@ -62,28 +63,37 @@ const Navigation: React.FC = () => {
                 behavior: 'smooth',
             });
         }
+        if (navigationOpen) toggleNavigation();
     };
+
+    const toggleNavigation = () => {
+        setNavigationOpen(!navigationOpen)
+    }
 
     return (
         <div className='navigation-wrapper'>
             <nav>
-                
-                <ul>
-                    {NavigationItems.map((navItem, index) => {
-                        return (
-                            <li
-                                key={`nav-item${index}`}
-                                onClick={(event) => handleClick(event, navItem.href)}
-                                ref={navItemElements[index]}
-                                className={index === activeSection ? "active" : ""}
-                            >
-                                {index != 0 ? <div className="nav-separator"></div> : null}
-                                <NavIcon href={navItem.icon} />
-                                <a href={navItem.href}>{navItem.name}</a>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <button className="navigation-toggle" onClick={toggleNavigation}>
+                    {navigationOpen ? <NavIcon href="close-nav.svg" /> : <NavIcon href="open-nav.svg" />}
+                </button>
+                <div className={`navigation-collapsable ${navigationOpen ? 'active' : ''}`}>
+                    <ul>
+                        {NavigationItems.map((navItem, index) => {
+                            return (
+                                <li
+                                    key={`nav-item${index}`}
+                                    onClick={(event) => handleClick(event, navItem.href)}
+                                    ref={navItemElements[index]}
+                                    className={index === activeSection ? "active" : ""}
+                                >
+                                    {index != 0 ? <div className="navigation-separator"></div> : null}
+                                    <NavIcon href={navItem.icon} />
+                                    <a href={navItem.href}>{navItem.name}</a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </nav>
             <Progressbar />
         </div>
