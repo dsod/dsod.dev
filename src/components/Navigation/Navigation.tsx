@@ -23,10 +23,12 @@ const Navigation: React.FC = () => {
     const [navigationOpen, setNavigationOpen] = useState<boolean>(false);
 
     const pageSections = useRef<SectionPositions>();
-    const activeSectionBreakpoint = window.innerHeight * 0.2
+    const activeSectionBreakpoint = useRef(0)
+    
 
 
     useLayoutEffect(() => {
+        activeSectionBreakpoint.current = window.innerHeight * 0.2
         pageSections.current = NavigationItems.reduce<SectionPositions>((previousValue, section) => {
             const element = document.getElementById(section.href.split('#')[1]);
             const sectionPosition: SectionPosition = {
@@ -42,7 +44,7 @@ const Navigation: React.FC = () => {
     useOnScroll(() => {
         if (!pageSections.current) return
 
-        const currentBreakpoint = window.scrollY + activeSectionBreakpoint;
+        const currentBreakpoint = window.scrollY + activeSectionBreakpoint.current;
         pageSections.current.forEach((section, index) => {
             console.log(`currentBreakpoint: ${currentBreakpoint}, section: ${section.offsetTop}`)
             if (currentBreakpoint > section.offsetTop && currentBreakpoint < (section.offsetTop + section.height)) {
