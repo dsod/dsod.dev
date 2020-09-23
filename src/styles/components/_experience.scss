@@ -1,4 +1,4 @@
-$timeline-width: 6px;
+$timeline-width: 4px;
 $timeline-section-height: 11.5rem;
 $timeline-section-expanded-height: 18rem;
 
@@ -55,15 +55,14 @@ $timeline-section-expanded-height: 18rem;
 
         & .center {
             position: absolute;
-
-            width: $timeline-width;
-            height: $timeline-width;
-            top: 50%;
-            left: 0px;
+            width: $timeline-width * 3;
+            height: $timeline-width * 3;
+            top: calc(50% - #{$timeline-width});
+            left: -#{$timeline-width};
             background-color: $color-light;
             border: solid 1px $color-accent-dark;
+            border-radius: 50%;
             box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.5);
-
             opacity: 0;
             transition: width 0.3s, left 0.3s, height 0.3s, opacity 0.3s ease-in-out;
         }
@@ -74,33 +73,11 @@ $timeline-section-expanded-height: 18rem;
         }
     }
 
-    &-section-left.active ~ .timeline-active > .center {
+    &-section.active ~ .timeline-active > .center {
         visibility: visible;
-        border-radius: 2px;
-        width: 1rem;
-        left: calc((#{$timeline-width} / 2) - 1rem);
-        height: 4px;
         opacity: 1;
-
-        @include media-breakpoint-up(md) {
-            left: calc((#{$timeline-width} / 2) - 2rem);
-            width: 2rem;
-        }
-    }
-    &-section-right.active ~ .timeline-active > .center {
-        visibility: visible;
-        border-radius: 2px;
-        width: 1rem;
-        left: $timeline-width / 2;
-        height: 4px;
-        opacity: 1;
-
-        @include media-breakpoint-up(md) {
-            width: 2rem;
-        }
     }
 }
-
 .timeline-section {
     position: relative;
     display: flex;
@@ -109,14 +86,22 @@ $timeline-section-expanded-height: 18rem;
     height: $timeline-section-height;
     transition: height 0.5s;
 
-    .role {
+    .timeline-role {
         position: relative;
         margin-bottom: 0;
         color: $color-gray;
         transition: color 0.3s;
+
+        p {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
     }
 
-    .learnings {
+    .timeline-learnings {
         position: relative;
         opacity: 0;
         padding-left: 1rem;
@@ -131,30 +116,33 @@ $timeline-section-expanded-height: 18rem;
     &.active {
         height: $timeline-section-expanded-height;
 
-        .role {
-            color: $color-accent;
+        .timeline-role {
+            h5 {
+                color: $color-accent;
+            }
+
+            p {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
     &-left {
-        .role {
+        .timeline-role {
             right: 55%;
             text-align: right;
             order: 2;
             transition: right 0.1s;
         }
 
-        .learnings {
+        .timeline-learnings {
             left: 55%;
             order: 1;
         }
 
         &.active {
-            .role {
-                right: 58%;
-            }
-
-            .learnings {
+            .timeline-learnings {
                 visibility: visible;
                 opacity: 1;
                 svg {
@@ -164,13 +152,13 @@ $timeline-section-expanded-height: 18rem;
         }
     }
     &-right {
-        .role {
+        .timeline-role {
             left: 55%;
             order: 1;
             transition: left 0.1s;
         }
 
-        .learnings {
+        .timeline-learnings {
             right: 55%;
             order: 2;
             text-align: right;
@@ -183,11 +171,7 @@ $timeline-section-expanded-height: 18rem;
         }
 
         &.active {
-            .role {
-                left: 58%;
-            }
-
-            .learnings {
+            .timeline-learnings {
                 visibility: visible;
                 opacity: 1;
                 padding-left: 0;

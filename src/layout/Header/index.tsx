@@ -13,7 +13,7 @@ const Header = () => (
                         </div>
                         <div className='col-8'>
                             <h2>
-                                I am <span className='font-color-accent'>Daniel!</span>
+                                I am <span className='color-accent'>Daniel!</span>
                             </h2>
                         </div>
                     </div>

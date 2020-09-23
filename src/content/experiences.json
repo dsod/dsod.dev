@@ -1,10 +1,14 @@
 [
   {
     "role": "Restaurant Manager",
+    "company": "Max Hamburger",
+    "duration": "24 months",
     "learnings": ["Business Economy", "Leadership", "Recruiting"]
   },
   {
     "role": "Application Specialist",
+    "company": "Shoppa AB",
+    "duration": "21 months",
     "learnings": [
       "IT Fundamentals",
       "1st & 2nd-line support",
@@ -15,18 +19,26 @@
   },
   {
     "role": "Service Delivery Manager",
+    "company": "Shoppa AB",
+    "duration": "9 months",
     "learnings": ["ITIL Basics", "Project Management"]
   },
   {
     "role": "Head of Delivery",
+    "company": "Shoppa AB",
+    "duration": "7 months",
     "learnings": ["Senior Project Manager", "Presale"]
   },
   {
     "role": "Nordic Channel Sales Manager",
+    "company": "Shoppa AB",
+    "duration": "9 months",
     "learnings": ["Sales", "Partner Strategies", "CMS Configuration"]
   },
   {
     "role": "Integration Manager",
+    "company": "Shoppa AB",
+    "duration": "13 months",
     "learnings": [
       "Solution Achritecture",
       "Quality Assurement",

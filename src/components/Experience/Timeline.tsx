@@ -45,8 +45,11 @@ const Timeline: React.FC = () => {
 
                 return (
                     <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
-                        <h5 className='role'>{data.role}</h5>
-                        <ul className='learnings'>
+                        <div className="timeline-role">
+                            <h5>{data.role}</h5>
+                <p>{`${data.company} - ${data.duration}`}</p>
+                        </div>
+                        <ul className='timeline-learnings'>
                             {data.learnings.map((learning, index) => {
                                 return (
                                     <li key={`list_item_${index}`}>
