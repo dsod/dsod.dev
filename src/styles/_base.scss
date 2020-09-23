@@ -20,18 +20,14 @@ body {
     }
 }
 
-.font-color-accent {
-    color: $color-accent;
-}
-
 ul {
     list-style: none;
     margin: 0;
     padding-left: 1rem;
 
     li {
-        @include margin-top(0.2rem);
-        @include margin-bottom(0.2rem);
+        @include margin-top(0.25rem);
+        @include margin-bottom(0.25rem);
     }
 
     svg {

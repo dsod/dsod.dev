@@ -1,8 +1,8 @@
 import React, { createRef, MouseEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import NavigationItems from 'content/navigation.json';
-import Progressbar from './Progressbar/Progressbar';
-import NavIcon from './NavIcon/NavIcon';
+import Progressbar from './Progressbar';
+import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
 
 type SectionPosition = {
@@ -46,7 +46,6 @@ const Navigation: React.FC = () => {
 
         const currentBreakpoint = window.scrollY + activeSectionBreakpoint.current;
         pageSections.current.forEach((section, index) => {
-            console.log(`currentBreakpoint: ${currentBreakpoint}, section: ${section.offsetTop}`)
             if (currentBreakpoint > section.offsetTop && currentBreakpoint < (section.offsetTop + section.height)) {
                 setActiveSection(index)
             }
@@ -76,7 +75,7 @@ const Navigation: React.FC = () => {
         <div className='navigation-wrapper'>
             <nav>
                 <button className="navigation-toggle" onClick={toggleNavigation}>
-                    {navigationOpen ? <NavIcon href="close-nav.svg" /> : <NavIcon href="open-nav.svg" />}
+                    {navigationOpen ? <Icon src="close-nav.svg" subFolder="navigation/"/> : <Icon src="open-nav.svg" subFolder="navigation/" />}
                 </button>
                 <div className={`navigation-collapsable ${navigationOpen ? 'active' : ''}`}>
                     <ul>
@@ -89,7 +88,7 @@ const Navigation: React.FC = () => {
                                     className={index === activeSection ? "active" : ""}
                                 >
                                     {index != 0 ? <div className="navigation-separator"></div> : null}
-                                    <NavIcon href={navItem.icon} />
+                                    <Icon src={`${navItem.icon}`} subFolder="navigation/" />
                                     <a href={navItem.href}>{navItem.name}</a>
                                 </li>
                             );

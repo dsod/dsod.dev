@@ -6,10 +6,10 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/card';
 @import 'base';
-@import './components/header';
-@import './components/footer';
+@import './layout/header';
+@import './layout/footer';
 @import './components/main';
-@import './components/sectionHeader';
 @import './components/experience';
-@import './components/navigation';
+@import './layout/navigation';
+@import './components/sectionHeader';
 @import './components/_progressbar';

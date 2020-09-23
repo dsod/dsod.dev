@@ -1,6 +1,6 @@
 import React from 'react';
-import SectionHeader from '../sectionHeader';
-import Timeline from './Timeline/Timeline';
+import SectionHeader from '../Shared/SectionHeader';
+import Timeline from './Timeline';
 
 const Experience = () => (
     <section id='experience' className='container'>

@@ -1,0 +1,147 @@
+[
+    {
+        "name": "tittstudio",
+        "category": "Company Website",
+        "description": "The company website of a lighting & interior architecture firm that i am maintaining. The backend is built with wordpress, sql and twig for server-side page rendering. The frontend is built with vanilla javascript and scss, bundled with webpack. Development environment are run through docker containers. The pages are built with reusable components that is managed by the company through the wordpress CMS.",
+        "links": [
+            {
+                "name": "Website",
+                "url": "https://tittstudio.se",
+                "icon": "external-site-icon.svg"
+            }
+        ],
+        "technologies": [
+            {
+                "name": "Wordpress",
+                "icon": "wordpress-icon.svg"
+            },
+            {
+                "name": "PHP",
+                "icon": "php-icon.svg"
+            },
+            {
+                "name": "Javascript",
+                "icon": "javascript-icon.svg"
+            },
+            {
+                "name": "SCSS",
+                "icon": "scss-icon.svg"
+            },
+            {
+                "name": "Webpack",
+                "icon": "webpack-icon.svg"
+            },
+            {
+                "name": "Docker",
+                "icon": "docker-icon.svg"
+            },
+            {
+                "name": "SQL - MariaDB",
+                "icon": "sql-icon.svg"
+            }
+        ]
+    },
+    {
+        "name": "dsod.dev",
+        "category": "Personal portfolio website",
+        "description": "The website you are currently on. I've built it with modern development tools such as gatsbyjs, react hooks and parts of bootstrap 5 (grid & reboot). I prototyped and created assets in Adobe XD, before starting development and the i've used mobile-first design & implementation throughout the process. ",
+        "links": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/dsod/dsod.dev",
+                "icon": "githuh-icon.svg"
+            },
+            {
+                "name": "Website",
+                "url": "https://dsod.dev",
+                "icon": "external-site-icon.svg"
+            }
+        ],
+        "technologies": [
+            {
+                "name": "Gatsby",
+                "icon": "gatsbyjs-icon.svg"
+            },
+            {
+                "name": "React",
+                "icon": "reactjs-icon.svg"
+            },
+            {
+                "name": "Typescript",
+                "icon": "typescript-icon.svg"
+            },
+            {
+                "name": "SCSS",
+                "icon": "scss-icon.svg"
+            }
+        ]
+    },
+    {
+        "name": "freeCodeCamp - Front End Libraries",
+        "category": "Online Course",
+        "description": "The 300-hour course contains hands-on excercises for learning font-end libraries, such as Bootstrap, SCSS, jQuery, React and Redux. When introducing each technology you code in a online IDE and have to complete automated tests to go through each section in the course. Finishing up you have to create 5 different pet projects in a development environment of your own choosing and use their testing library in order to verify the functionality of the application. Upon completion you receive a certification (see links below).",
+        "links": [
+            {
+                "name": "Random Quote Machine",
+                "url": "https://fcc-rqm.dsod.dev",
+                "icon": "pet-project-icon.svg"
+            },
+            {
+                "name": "Markdown Previewer",
+                "url": "https://fcc-mp.dsod.dev",
+                "icon": "pet-project-icon.svg"
+            },
+            {
+                "name": "Drum Machine",
+                "url": "https://fcc-dm.dsod.dev",
+                "icon": "pet-project-icon.svg"
+            },
+            {
+                "name": "Calculator",
+                "url": "https://fcc-calculator.dsod.dev",
+                "icon": "pet-project-icon.svg"
+            },
+            {
+                "name": "Pomodoro Clock",
+                "url": "https://fcc-pc.dsod.dev",
+                "icon": "pet-project-icon.svg"
+            },
+            {
+                "name": "Certificate",
+                "url": "https://www.freecodecamp.org/certification/dsod/front-end-libraries",
+                "icon": "certificate-icon.svg"
+            }
+        ],
+        "technologies": [
+            {
+                "name": "Javascript",
+                "icon": "javascript-icon.svg"
+            },
+            {
+                "name": "Typescript",
+                "icon": "typescript-icon.svg"
+            },
+            {
+                "name": "React",
+                "icon": "react-icon.svg"
+            },
+            {
+                "name": "Redux",
+                "icon": "redux-icon.svg"
+            },
+            {
+                "name": "Redux Toolkit",
+                "icon": "redux-toolkit-icon.svg"
+            },
+            {
+                "name": "Bootstrap 4",
+                "icon": "bootstrap-icon.svg"
+            },
+            {
+                "name": "SCSS",
+                "icon": "scss-icon.svg"
+            }
+            
+        ]
+    }
+]

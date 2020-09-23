@@ -1,10 +1,11 @@
 import React, { useLayoutEffect} from 'react'
 
 type NavIconProps = {
-    href: string
+    src: string,
+    subFolder?: string,
 }
 
-const NavIcon = ({href}: NavIconProps) => {
+const NavIcon = ({src, subFolder = ""}: NavIconProps) => {
     const ImportedIconRef = React.useRef<React.FC<React.SVGProps<SVGSVGElement>>>();
     const [loading, setLoading] = React.useState(false);
 
@@ -13,7 +14,7 @@ const NavIcon = ({href}: NavIconProps) => {
 
         const iconImport = async (): Promise<void> => {
             try {
-            ImportedIconRef.current = (await import(`images/icons/${href}`)).default;
+            ImportedIconRef.current = (await import("images/icons/" + subFolder + src)).default;
             } catch(err) {
                 throw err;
             } finally {
@@ -21,7 +22,7 @@ const NavIcon = ({href}: NavIconProps) => {
             }
         }
         iconImport()
-    }, [href])
+    }, [src])
 
     if (!loading && ImportedIconRef.current) {
         const { current: ImportedIcon } = ImportedIconRef;

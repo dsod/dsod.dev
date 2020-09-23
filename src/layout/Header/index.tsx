@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileImage from 'components/images/profileImage';
+import ProfileImage from 'components/Images/ProfileImage';
 import ListIcon from 'images/icons/list-item.svg';
 
 const Header = () => (

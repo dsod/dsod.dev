@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionHeader from './sectionHeader';
+import SectionHeader from '../Shared/SectionHeader';
 
 const About = () => (
     <section id='about' className='container'>
