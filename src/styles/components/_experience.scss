@@ -87,22 +87,26 @@ $timeline-section-expanded-height: 18rem;
     transition: height 0.5s;
 
     .timeline-role {
-        position: relative;
+        position: absolute;
         margin-bottom: 0;
         color: $color-gray;
         transition: color 0.3s;
 
+        h5 {
+            font-weight: 500;
+        }
+
         p {
-            font-size: 0.9rem;
             font-style: italic;
             opacity: 0;
+            margin: 0;
             visibility: hidden;
             transition: opacity 0.3s ease-in-out;
         }
     }
 
     .timeline-learnings {
-        position: relative;
+        position: absolute;
         opacity: 0;
         padding-left: 1rem;
         padding-right: 1rem;
