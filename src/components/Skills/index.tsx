@@ -23,7 +23,7 @@ const Skills = () => (
                             stakeholders within a short period of time.
                         </p>
                     </SkillListItem>
-                    <SkillListItem listItem='Defining Requirements'></SkillListItem>
+                    <SkillListItem listItem='Defining Requirements'>
                     <p>
                         When implementing enterprise software into organizations with varying needs,
                         defining their goals and requirements is key to success.
@@ -46,7 +46,8 @@ const Skills = () => (
                         With several years of experience in this area, I feel at home managing
                         requirements from different stakeholders.
                     </p>
-                    <SkillListItem listItem='Communication'></SkillListItem>
+                    </SkillListItem>
+                    <SkillListItem listItem='Communication'>
                     <p>
                         I have experience with managing projects with stakeholders from several
                         different business areas who have varying levels of technical knowledge.
@@ -55,6 +56,7 @@ const Skills = () => (
                         While technical forums is where I feel at home, I have grown custom to
                         adjusting the level of technical terms in discussions as needed.
                     </p>
+                    </SkillListItem>
                     <SkillListItem listItem='Quality Assurement'>
                         <p>
                             My department was responsible for both acceptance testing and rolling

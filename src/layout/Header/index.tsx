@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfileImage from 'components/Images/ProfileImage';
-import ListIcon from 'images/icons/list-item.svg';
 
 const Header = () => (
     <header id='header' className='d-flex align-items-center'>
@@ -22,25 +21,7 @@ const Header = () => (
                     <div className='col-lg-8'>
                         <p className='lead'>Software development is my newfound passion</p>
                     </div>
-                    <div className='col-lg-8'>
-                        <div className='card'>
-                            <h5 className='card-header'>Positions of interrest</h5>
-                            <div className='card-body'>
-                                <ul>
-                                    <li>
-                                        <ListIcon />
-                                        Product Management
-                                    </li>
-                                    <li>
-                                        <ListIcon />
-                                        Full-stack Software Development
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
                 <div className='picture col-6 col-lg-4'>
                     <ProfileImage />
                 </div>

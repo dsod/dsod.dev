@@ -46,9 +46,11 @@ body {
                 margin: 4rem 0 0 0;
                 height: 2rem;
                 width: 2rem;
-                stroke: $color-low-profile;
-                stroke-width: 0.75rem;
-                transition: stroke 0.2s, height 0.1s;
+                transition: height 0.1s;
+
+                path {
+                    transition: fill 0.2;
+                }
             }
 
             a {
@@ -71,9 +73,12 @@ body {
                     }
 
                     > svg {
-                        stroke: $color-light;
                         height: 2.5rem;
                         width: 2.5rem;
+
+                        path {
+                            fill: $color-light;
+                        }
                     }
                 }
 
@@ -83,9 +88,12 @@ body {
                     }
 
                     > svg {
-                        stroke: $color-accent;
                         height: 2.5rem;
                         width: 2.5rem;
+
+                        path {
+                            fill: $color-accent;
+                        }
                     }
                 }
             }

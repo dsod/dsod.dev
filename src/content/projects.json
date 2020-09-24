@@ -34,10 +34,6 @@
             {
                 "name": "Docker",
                 "icon": "docker-icon.svg"
-            },
-            {
-                "name": "SQL - MariaDB",
-                "icon": "sql-icon.svg"
             }
         ]
     },
@@ -128,10 +124,6 @@
             {
                 "name": "Redux",
                 "icon": "redux-icon.svg"
-            },
-            {
-                "name": "Redux Toolkit",
-                "icon": "redux-toolkit-icon.svg"
             },
             {
                 "name": "Bootstrap 4",

@@ -5,6 +5,8 @@ $color-light: #e2e2e2;
 $color-low-profile: #aeaeae;
 $color-gray: #67696e;
 $color-dark: #262626;
+$color-card-background: rgba(103, 105, 110, 0.13);
+
 $body-bg: $color-dark;
 $body-color: $color-light;
 
@@ -17,7 +19,7 @@ $font-family-base: Montserrat, Tahoma, Helvetica, sans-serif;
 
 // Headings
 $headings-font-family: Work Sans, Tahoma, Helvetica, sans-serif;
-$headings-font-weight: 300;
+$headings-font-weight: 500;
 $h1-font-size: $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 2 !default;
 $h3-font-size: $font-size-base * 1.75 !default;

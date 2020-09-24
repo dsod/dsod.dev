@@ -92,10 +92,6 @@ $timeline-section-expanded-height: 18rem;
         color: $color-gray;
         transition: color 0.3s;
 
-        h5 {
-            font-weight: 500;
-        }
-
         p {
             font-style: italic;
             opacity: 0;
@@ -113,7 +109,13 @@ $timeline-section-expanded-height: 18rem;
         transition: opacity 0.3s, padding-left 0.5s, padding-right 0.5s;
 
         svg {
-            height: 22px;
+            height: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        li {
+            color: $color-light;
         }
     }
 
@@ -143,15 +145,18 @@ $timeline-section-expanded-height: 18rem;
         .timeline-learnings {
             left: 55%;
             order: 1;
+
+            svg {
+                position: absolute;
+                right: unset;
+                left: -0.4rem;
+            }
         }
 
         &.active {
             .timeline-learnings {
                 visibility: visible;
                 opacity: 1;
-                svg {
-                    left: -0.3rem;
-                }
             }
         }
     }
@@ -168,6 +173,7 @@ $timeline-section-expanded-height: 18rem;
             text-align: right;
 
             svg {
+                position: absolute;
                 right: -0.4rem;
                 left: unset;
                 transform: rotate(180deg);

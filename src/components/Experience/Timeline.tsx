@@ -1,6 +1,6 @@
 import React, { createRef, useMemo, useState } from 'react';
 import Experiences from 'content/experiences.json';
-import ListIcon from 'images/icons/list-item.svg';
+import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
 
 const Timeline: React.FC = () => {
@@ -45,15 +45,15 @@ const Timeline: React.FC = () => {
 
                 return (
                     <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
-                        <div className="timeline-role">
+                        <div className='timeline-role'>
                             <h5>{data.role}</h5>
-                <p>{`${data.company} - ${data.duration}`}</p>
+                            <p>{`${data.company} - ${data.duration}`}</p>
                         </div>
                         <ul className='timeline-learnings'>
                             {data.learnings.map((learning, index) => {
                                 return (
                                     <li key={`list_item_${index}`}>
-                                        <ListIcon />
+                                        <Icon src='list-item.svg' />
                                         {learning}
                                     </li>
                                 );

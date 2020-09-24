@@ -1,0 +1,32 @@
+.card {
+    background-color: $color-card-background;
+    border: 1px solid rgb(24, 24, 24);
+    border-radius: 2px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
+
+    &-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &-title {
+        font-size: $h5-font-size;
+    }
+
+    &-icon {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 0.75rem;
+    }
+
+    &-body {
+        p {
+            margin: 0;
+        }
+    }
+}
