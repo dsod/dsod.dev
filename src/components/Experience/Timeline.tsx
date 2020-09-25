@@ -1,29 +1,35 @@
-import React, { createRef, useMemo, useState } from 'react';
+import React, { createRef, useMemo, useRef, useState } from 'react';
 import Experiences from 'content/experiences.json';
 import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
 
 const Timeline: React.FC = () => {
+    const timelineWrapper = useRef<HTMLDivElement>(null);
     const sectionElements: React.RefObject<HTMLDivElement>[] = useMemo(
         () => Array.from({ length: Experiences.length }).map(() => createRef()),
         []
     );
-
     const [activeSection, setActiveSection] = useState(-1);
 
     useOnScroll(
         () => {
-            const middleOfViewport = window.innerHeight / 2;
+            const animationBreakpoint = window.innerHeight / 4;
+            const timelineWrapperPosition = timelineWrapper.current!.getBoundingClientRect();
+            if (
+                timelineWrapperPosition.top > animationBreakpoint ||
+                timelineWrapperPosition.bottom < animationBreakpoint
+            ) {
+                if (activeSection != -1) setActiveSection(-1);
+                return;
+            }
             sectionElements.map((section, index) => {
                 const sectionPosition = section.current?.getBoundingClientRect();
                 const sectionMiddleOfViewport =
-                    sectionPosition!.top <= middleOfViewport &&
-                    sectionPosition!.bottom >= middleOfViewport;
+                    sectionPosition!.top <= animationBreakpoint &&
+                    sectionPosition!.bottom >= animationBreakpoint;
 
                 if (sectionMiddleOfViewport && activeSection != index) {
                     setActiveSection(index);
-                } else if (!sectionMiddleOfViewport && activeSection === index) {
-                    setActiveSection(-1);
                 }
             });
         },
@@ -32,7 +38,7 @@ const Timeline: React.FC = () => {
     );
 
     return (
-        <div id='timeline' className='timeline-wrapper'>
+        <div id='timeline' className='timeline-wrapper' ref={timelineWrapper}>
             {Experiences.map((data, index) => {
                 let style: string;
                 index % 2 === 0

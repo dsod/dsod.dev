@@ -5,7 +5,7 @@ import Icon from 'components/Images/Icon';
 const About = () => (
     <section id='about' className='container'>
         <div className='row justify-content-center'>
-            <div className='col-7 col-md-6 col-lg-5'>
+            <div className='col-8 col-md-7 col-lg-6'>
                 <SectionHeader section='About' />
                 <div className='row'>
                     <div className='col-8 col-lg-4 order-lg-0'>
@@ -34,7 +34,7 @@ const About = () => (
                         </p>
                     </div>
                     <div className='col-8 col-lg-4 align-self-center ml-lg-auto'>
-                        <div className='card'>
+                        <div className='card mx-0 my-3 m-lg-3'>
                             <div className='card-header'>
                                 <Icon
                                     src='search-icon.svg'
@@ -44,13 +44,19 @@ const About = () => (
                                 <span className='card-title'>Positions of interrest</span>
                             </div>
                             <div className='card-body'>
-                                <p>
-                                    I look for opportunities in Product Management or Full Stack Web
-                                    Development.
-                                </p>
+                                <ul>
+                                    <li>
+                                        <Icon src='list-item.svg' />
+                                        Product Management
+                                    </li>
+                                    <li>
+                                        <Icon src='list-item.svg' />
+                                        Full Stack Web Development
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div className='card'>
+                        <div className='card mx-0 my-3 m-lg-3'>
                             <div className='card-header'>
                                 <Icon
                                     src='location-icon.svg'

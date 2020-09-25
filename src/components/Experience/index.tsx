@@ -5,7 +5,7 @@ import Timeline from './Timeline';
 const Experience = () => (
     <section id='experience' className='container'>
         <div className='row justify-content-center'>
-            <div className='col-7 col-md-6 col-lg-5'>
+            <div className='col-8 col-md-7 col-lg-6'>
                 <SectionHeader section='Experience' />
 
                 <Timeline />
