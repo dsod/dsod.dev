@@ -10,7 +10,7 @@ const Projects = () => {
                 <div className='col-8 col-md-7 col-lg-6'>
                     <SectionHeader section='Projects' />
                     <div className='row justify-content-center'>
-                        <div className='col-8 col-md-6'>
+                        <div className='col-6 col-lg-4'>
                             {ProjectItems.map((project, index) => (
                                 <div key={`project-${index}`} className='card m-lg-3'>
                                     <div className='card-header flex-column'>

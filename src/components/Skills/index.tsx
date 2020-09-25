@@ -34,8 +34,14 @@ const Skills = () => {
                                 <h4>Technological</h4>
                                 {SkillItems.technical.map((skill, index) => (
                                     <div key={`technical-${index}`} className='card-section'>
-                                        <Icon src={skill.icon} subFolder='technologies/' />
-                                        <h5>{skill.category}</h5>
+                                        <div className='card-header'>
+                                            <Icon
+                                                src={skill.icon}
+                                                subFolder='technologies/'
+                                                classes='card-icon'
+                                            />
+                                            <h5>{skill.category}</h5>
+                                        </div>
                                         <div className='card-body'>
                                             <ul>
                                                 {skill.technology.map((technology, index) => (

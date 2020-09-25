@@ -34,10 +34,10 @@
     }
 
     &-section {
-        @include margin-top(2rem);
-        @include margin-bottom(2rem);
+        @include margin-top(1rem);
+        @include margin-bottom(1rem);
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: row wrap;
 
         h5 {
             margin: 1rem 0;

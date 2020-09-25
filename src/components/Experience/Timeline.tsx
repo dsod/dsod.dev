@@ -13,7 +13,7 @@ const Timeline: React.FC = () => {
 
     useOnScroll(
         () => {
-            const animationBreakpoint = window.innerHeight / 4;
+            const animationBreakpoint = window.innerHeight / 3.5;
             const timelineWrapperPosition = timelineWrapper.current!.getBoundingClientRect();
             if (
                 timelineWrapperPosition.top > animationBreakpoint ||
