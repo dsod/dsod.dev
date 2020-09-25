@@ -14,52 +14,56 @@ const Skills = () => {
                     <div className='row'>
                         <div className='col-8 col-lg-4'>
                             <div className='card mr-lg-3 my-2'>
-                                <h4>Professional</h4>
-                                <ul>
-                                    {SkillItems.professional.map((skill, index) => (
-                                        <ProfessionalListItem
-                                            key={`professional-${index}`}
-                                            listItem={skill.name}
-                                        >
-                                            {skill.texts.map((text, index) => (
-                                                <p key={`text-${index}`}>{text}</p>
-                                            ))}
-                                        </ProfessionalListItem>
-                                    ))}
-                                </ul>
+                                <div className='card-wrapper'>
+                                    <h4>Professional</h4>
+                                    <ul>
+                                        {SkillItems.professional.map((skill, index) => (
+                                            <ProfessionalListItem
+                                                key={`professional-${index}`}
+                                                listItem={skill.name}
+                                            >
+                                                {skill.texts.map((text, index) => (
+                                                    <p key={`text-${index}`}>{text}</p>
+                                                ))}
+                                            </ProfessionalListItem>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className='col-8 col-lg-4'>
                             <div className='card ml-lg-2 my-2'>
-                                <h4>Technological</h4>
-                                {SkillItems.technical.map((skill, index) => (
-                                    <div key={`technical-${index}`} className='card-section'>
-                                        <div className='card-header'>
-                                            <Icon
-                                                src={skill.icon}
-                                                subFolder='technologies/'
-                                                classes='card-icon'
-                                            />
-                                            <h5>{skill.category}</h5>
+                                <div className='card-wrapper'>
+                                    <h4>Technological</h4>
+                                    {SkillItems.technical.map((skill, index) => (
+                                        <div key={`technical-${index}`} className='card-section'>
+                                            <div className='card-header'>
+                                                <Icon
+                                                    src={skill.icon}
+                                                    subFolder='technologies/'
+                                                    classes='card-icon'
+                                                />
+                                                <h5>{skill.category}</h5>
+                                            </div>
+                                            <div className='card-body'>
+                                                <ul>
+                                                    {skill.technology.map((technology, index) => (
+                                                        <TechnologyListItem
+                                                            key={`technology-${index}`}
+                                                            styles={{ borderColor: skill.color }}
+                                                        >
+                                                            <Icon
+                                                                src={technology.icon}
+                                                                subFolder='technologies/'
+                                                            />
+                                                            {technology.name}
+                                                        </TechnologyListItem>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div className='card-body'>
-                                            <ul>
-                                                {skill.technology.map((technology, index) => (
-                                                    <TechnologyListItem
-                                                        key={`technology-${index}`}
-                                                        styles={{ borderColor: skill.color }}
-                                                    >
-                                                        <Icon
-                                                            src={technology.icon}
-                                                            subFolder='technologies/'
-                                                        />
-                                                        {technology.name}
-                                                    </TechnologyListItem>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@
         "name": "tittstudio",
         "category": "Company Website",
         "description": "The company website of a lighting & interior architecture firm. The backend is built with wordpress, sql and twig for server-side page rendering. The frontend is built with vanilla javascript and scss, bundled with webpack. Development environment are run through docker containers. The pages are built with reusable components that is managed by the company through the wordpress CMS.",
+        "image": "tittstudio.png",
         "links": [
             {
                 "name": "Website",
@@ -40,6 +41,7 @@
     {
         "name": "dsod.dev",
         "category": "Personal portfolio website",
+        "image": "dsod.dev.png",
         "description": "The website you are currently on. I've built it with modern development tools such as gatsbyjs, react hooks and parts of bootstrap 5 (grid & reboot). I prototyped and created assets in Adobe XD, before starting development and the i've used mobile-first design & implementation throughout the process. ",
         "links": [
             {
@@ -75,6 +77,7 @@
     {
         "name": "freeCodeCamp - Front End Libraries",
         "category": "Online Course",
+        "image": "",
         "description": "The 300-hour course contains hands-on excercises for learning font-end libraries, such as Bootstrap, SCSS, jQuery, React and Redux. When introducing each technology you code in a online IDE and have to complete automated tests to go through each section in the course. Finishing up you have to create 5 different pet projects in a development environment of your own choosing and use their testing library in order to verify the functionality of the application. Upon completion you receive a certification (see links below).",
         "links": [
             {

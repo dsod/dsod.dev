@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileImage from 'components/Images/ProfileImage';
+import Image from 'components/Images';
 
 const Header = () => (
     <header id='header' className='d-flex align-items-center'>
@@ -23,7 +23,7 @@ const Header = () => (
                     </div>
                 </div>
                 <div className='picture col-6 col-lg-4'>
-                    <ProfileImage />
+                    <Image src='profile@2x.png' alt='Profile Image' />
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ const NavIcon = ({ src, subFolder = '', classes }: NavIconProps) => {
 
         const iconImport = async (): Promise<void> => {
             try {
-                ImportedIconRef.current = (await import('images/icons/' + subFolder + src)).default;
+                ImportedIconRef.current = (await import('icons/' + subFolder + src)).default;
             } catch (err) {
                 throw err;
             } finally {

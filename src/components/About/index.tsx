@@ -35,38 +35,42 @@ const About = () => (
                     </div>
                     <div className='col-8 col-lg-4 align-self-center ml-lg-auto'>
                         <div className='card mx-0 my-3 m-lg-3'>
-                            <div className='card-header'>
-                                <Icon
-                                    src='search-icon.svg'
-                                    subFolder='about/'
-                                    classes='card-icon'
-                                />
-                                <span className='card-title'>Positions of interrest</span>
-                            </div>
-                            <div className='card-body'>
-                                <ul>
-                                    <li>
-                                        <Icon src='list-item.svg' />
-                                        Product Management
-                                    </li>
-                                    <li>
-                                        <Icon src='list-item.svg' />
-                                        Full Stack Web Development
-                                    </li>
-                                </ul>
+                            <div className='card-wrapper'>
+                                <div className='card-header'>
+                                    <Icon
+                                        src='search-icon.svg'
+                                        subFolder='about/'
+                                        classes='card-icon'
+                                    />
+                                    <span className='card-title'>Positions of interrest</span>
+                                </div>
+                                <div className='card-body'>
+                                    <ul>
+                                        <li>
+                                            <Icon src='list-item.svg' />
+                                            Product Management
+                                        </li>
+                                        <li>
+                                            <Icon src='list-item.svg' />
+                                            Full Stack Web Development
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className='card mx-0 my-3 m-lg-3'>
-                            <div className='card-header'>
-                                <Icon
-                                    src='location-icon.svg'
-                                    subFolder='about/'
-                                    classes='card-icon'
-                                />
-                                <span className='card-title'>Location</span>
-                            </div>
-                            <div className='card-body'>
-                                <p>Täby, Stockholm, Sweden</p>
+                            <div className='card-wrapper'>
+                                <div className='card-header'>
+                                    <Icon
+                                        src='location-icon.svg'
+                                        subFolder='about/'
+                                        classes='card-icon'
+                                    />
+                                    <span className='card-title'>Location</span>
+                                </div>
+                                <div className='card-body'>
+                                    <p>Täby, Stockholm, Sweden</p>
+                                </div>
                             </div>
                         </div>
                     </div>
