@@ -1,0 +1,135 @@
+
+{
+    "professional": [
+        {
+            "name": "Problem Solving",
+            "texts": [
+                "While this always have come easy to me, problem solving frequently during a long period of time have given me other perks, apart from actually finding solutions.",
+                "I use situations like this as an opportunity to paint a bigger picture of how systems, cultures or individuals work.",
+                "This allow me to rapidly learn new things, adapt and generate value to stakeholders within a short period of time."
+            ]
+        },
+        {
+            "name": "Defining Requirements",
+            "texts": [
+                "When implementing enterprise software into organizations with varying needs, defining their goals and requirements is key to success.",
+                "I have found that illustrating solutions, in addition to discussions and documentation, is a great tool to make sure all parties are on the same page.",
+                "Just as important, is defining what is out of scope, in order to prevent (to much) scope creep.",
+                "I have worked close together with a software development team and have been responsible for defining and reproducing user stories and bugs respectively, with acceptance test cases and reproducible steps.",
+                "With several years of experience in this area, I feel at home managing requirements from different stakeholders."                    
+            ]
+        },
+        {
+            "name": "Communication",
+            "texts": [
+                "I have experience with managing projects with stakeholders from several different business areas who have varying levels of technical knowledge.",
+                "While technical forums is where I feel at home, I have grown custom to adjusting the level of technical terms in discussions as needed."
+            ]
+        },
+        {
+            "name": "Quality Assurement",
+            "texts": [
+                "My department was responsible for both acceptance testing and rolling out new releases of software to customers.",
+                "This process was conducted in close collaboration with the software development team."
+            ]
+        }
+    ],
+    "technical": [
+        {
+            "category": "Languages",
+            "icon": "programming-language-icon.svg",
+            "color": "#D39E17",
+            "technology": [
+                {
+                "name": "Python",
+                "icon": "python-icon.svg"
+                },
+                {
+                "name": "Typescript",
+                "icon": "typescript-icon.svg"
+                },
+                {
+                "name": "Javascript",
+                "icon": "python-icon.svg"
+                },
+                {
+                "name": "SCSS / CSS",
+                "icon": "scss-icon.svg"
+                },
+                {
+                "name": "SQL",
+                "icon": "sql-icon.svg"
+                }
+            ]
+        },
+        {
+            "category": "Frameworks",
+            "icon": "framework-icon.svg",
+            "color": "#37AE6F",
+            "technology": [
+                    {
+                    "name": "React",
+                    "icon": "react-icon.svg"
+                    },
+                    {
+                    "name": "Wordpress",
+                    "icon": "wordpress-icon.svg"
+                    },
+                    {
+                    "name": "Redux",
+                    "icon": "redux-icon.svg"
+                    },
+                    {
+                    "name": "Bootstrap",
+                    "icon": "bootstrap-icon.svg"
+                    },
+                    {
+                    "name": "jQuery",
+                    "icon": "jquery-icon.svg"
+                    }
+            ]
+        },
+        {
+            "category": "Integration",
+            "icon": "api-icon.svg",
+            "color": "#D26D2D",
+            "technology": [
+                    {
+                    "name": "SOAP",
+                    "icon": "soap-icon.svg"
+                    },
+                    {
+                    "name": "GraphQL",
+                    "icon": "graphql-icon.svg"
+                    },
+                    {
+                    "name": "REST",
+                    "icon": "rest-icon.svg"
+                    }
+            ]
+        },
+        {
+            "category": "Tooling",
+            "icon": "tools-icon.svg",
+            "color": "#A15DEF",
+            "technology": [
+                {
+                "name": "Git",
+                "icon": "git-icon.svg"
+                },
+                {
+                "name": "Docker",
+                "icon": "docker-icon.svg"
+                },
+                {
+                "name": "Webpack",
+                "icon": "webpack-icon.svg"
+                },
+                {
+                "name": "Gatsby",
+                "icon": "gatsby-icon.svg"
+                }
+            ]
+        }
+    ]
+}

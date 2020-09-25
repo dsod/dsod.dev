@@ -1,12 +1,12 @@
 import React, { createRef, useMemo, useRef, useState } from 'react';
-import Experiences from 'content/experiences.json';
+import ExperienceItems from 'content/experiences.json';
 import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
 
 const Timeline: React.FC = () => {
     const timelineWrapper = useRef<HTMLDivElement>(null);
     const sectionElements: React.RefObject<HTMLDivElement>[] = useMemo(
-        () => Array.from({ length: Experiences.length }).map(() => createRef()),
+        () => Array.from({ length: ExperienceItems.length }).map(() => createRef()),
         []
     );
     const [activeSection, setActiveSection] = useState(-1);
@@ -39,7 +39,7 @@ const Timeline: React.FC = () => {
 
     return (
         <div id='timeline' className='timeline-wrapper' ref={timelineWrapper}>
-            {Experiences.map((data, index) => {
+            {ExperienceItems.map((data, index) => {
                 let style: string;
                 index % 2 === 0
                     ? (style = `timeline-section timeline-section-right ${
@@ -68,7 +68,7 @@ const Timeline: React.FC = () => {
                     </div>
                 );
             })}
-            <div className={`timeline timeline-height-${Experiences.length}`}></div>
+            <div className={`timeline timeline-height-${ExperienceItems.length}`}></div>
 
             <div
                 className={`timeline-active ${

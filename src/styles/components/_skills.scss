@@ -1,0 +1,26 @@
+.skills {
+    &-header {
+        @include margin-top(1rem);
+        @include margin-bottom(0.5rem);
+        cursor: pointer;
+        z-index: 5;
+
+        svg {
+            height: $h5-font-size;
+        }
+    }
+
+    &-item {
+        overflow: hidden;
+    }
+
+    &-body {
+        max-height: 0;
+        transition: max-height 0.1s ease-out;
+
+        &.active {
+            max-height: 1000px;
+            transition: max-height 0.25s ease-in;
+        }
+    }
+}

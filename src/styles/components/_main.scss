@@ -9,18 +9,18 @@ main {
     box-shadow: inset 0px 10px 20px -10px rgba(0, 0, 0, 0.5),
         inset 0px -10px 20px -10px rgba(0, 0, 0, 0.5);
 
-    ul svg {
-        height: 2rem;
-        margin-left: 0;
+    ul {
+        padding-left: 0;
+
+        svg {
+            height: 2rem;
+            margin-left: 0;
+        }
     }
 }
 
 p {
     color: $color-low-profile;
-}
-
-.skills-header {
-    @include margin-top(2rem);
 }
 
 .position-relative {

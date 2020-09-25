@@ -2,12 +2,12 @@
     {
         "name": "tittstudio",
         "category": "Company Website",
-        "description": "The company website of a lighting & interior architecture firm that i am maintaining. The backend is built with wordpress, sql and twig for server-side page rendering. The frontend is built with vanilla javascript and scss, bundled with webpack. Development environment are run through docker containers. The pages are built with reusable components that is managed by the company through the wordpress CMS.",
+        "description": "The company website of a lighting & interior architecture firm. The backend is built with wordpress, sql and twig for server-side page rendering. The frontend is built with vanilla javascript and scss, bundled with webpack. Development environment are run through docker containers. The pages are built with reusable components that is managed by the company through the wordpress CMS.",
         "links": [
             {
                 "name": "Website",
                 "url": "https://tittstudio.se",
-                "icon": "external-site-icon.svg"
+                "icon": "external-link-icon.svg"
             }
         ],
         "technologies": [
@@ -45,22 +45,22 @@
             {
                 "name": "GitHub",
                 "url": "https://github.com/dsod/dsod.dev",
-                "icon": "githuh-icon.svg"
+                "icon": "github-icon.svg"
             },
             {
                 "name": "Website",
                 "url": "https://dsod.dev",
-                "icon": "external-site-icon.svg"
+                "icon": "external-link-icon.svg"
             }
         ],
         "technologies": [
             {
                 "name": "Gatsby",
-                "icon": "gatsbyjs-icon.svg"
+                "icon": "gatsby-icon.svg"
             },
             {
                 "name": "React",
-                "icon": "reactjs-icon.svg"
+                "icon": "react-icon.svg"
             },
             {
                 "name": "Typescript",
@@ -80,27 +80,27 @@
             {
                 "name": "Random Quote Machine",
                 "url": "https://fcc-rqm.dsod.dev",
-                "icon": "pet-project-icon.svg"
+                "icon": "project-icon.svg"
             },
             {
                 "name": "Markdown Previewer",
                 "url": "https://fcc-mp.dsod.dev",
-                "icon": "pet-project-icon.svg"
+                "icon": "project-icon.svg"
             },
             {
                 "name": "Drum Machine",
                 "url": "https://fcc-dm.dsod.dev",
-                "icon": "pet-project-icon.svg"
+                "icon": "project-icon.svg"
             },
             {
                 "name": "Calculator",
                 "url": "https://fcc-calculator.dsod.dev",
-                "icon": "pet-project-icon.svg"
+                "icon": "project-icon.svg"
             },
             {
                 "name": "Pomodoro Clock",
                 "url": "https://fcc-pc.dsod.dev",
-                "icon": "pet-project-icon.svg"
+                "icon": "project-icon.svg"
             },
             {
                 "name": "Certificate",

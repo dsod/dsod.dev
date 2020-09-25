@@ -1,11 +1,14 @@
 import React from 'react';
-import Icon from "components/Images/Icon"
+import Icon from 'components/Images/Icon';
 
 const Footer = () => {
     return (
         <footer id='footer' className='container-fluid'>
             <div className='row mb-3'>
-                <Icon src="linkedin-icon.svg" />
+                <div className='d-flex align-items-center justify-content-center'>
+                    <Icon src='linkedin-icon.svg' subFolder='external/' />
+                    <Icon src='github-icon.svg' subFolder='external/' />
+                </div>
             </div>
             <div className='row justify-content-center'>
                 <p>
