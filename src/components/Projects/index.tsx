@@ -11,9 +11,9 @@ const Projects = () => {
                 <div className='col-8 col-md-7 col-lg-6'>
                     <SectionHeader section='Projects' />
                     <div className='row justify-content-center'>
-                        <div className='col-8 col-md-7 col-xl-6'>
+                        <div className='col-8 col-md-6 col-xl-5'>
                             {ProjectItems.map((project, index) => (
-                                <div key={`project-${index}`} className='card m-lg-3'>
+                                <div key={`project-${index}`} className='card my-3 m-lg-3'>
                                     {project.image ? (
                                         <div className='card-image-wrapper'>
                                             <div className='card-image'>
@@ -22,7 +22,12 @@ const Projects = () => {
                                                     alt={`${project.name} image`}
                                                 />
                                             </div>
-                                            <div className='card-image-overlay'></div>
+                                            <div className='card-image-overlay'>
+                                                <div className='card-image-overlay-text'>
+                                                    scrollable
+                                                    <Icon src='arrow-down.svg' />
+                                                </div>
+                                            </div>
                                         </div>
                                     ) : (
                                         ''
@@ -35,26 +40,94 @@ const Projects = () => {
                                                 <h5>{project.category}</h5>
                                             </div>
                                         </div>
-                                        <div className='card-cody'>
-                                            <p>{project.description}</p>
-                                            {project.links.map((link, index) => (
-                                                <a key={index} href={link.url} target='blank'>
-                                                    <Icon src={link.icon} subFolder='external/' />
-                                                    {link.name}
-                                                </a>
-                                            ))}
-                                            <div className='d-flex justify-content-center align-items-center m-2'>
-                                                {project.technologies.map((technology, index) => (
-                                                    <span
-                                                        key={`technology-${index}`}
-                                                        className='p-2'
-                                                    >
-                                                        <Icon
-                                                            src={technology.icon}
-                                                            subFolder='technologies/'
-                                                        />
-                                                    </span>
-                                                ))}
+                                        <div className='card-section'>
+                                            <div className='card-body'>
+                                                <div className='row'>
+                                                    <div className='col-8 col-lg-5'>
+                                                        <p>{project.description}</p>
+                                                    </div>
+                                                    <div className='col-8 col-lg-3'>
+                                                        <ul className='flex-lg-column justify-content-lg-end'>
+                                                            {project.technologies.map(
+                                                                (technology, index) => (
+                                                                    <li
+                                                                        key={`technology-${index}`}
+                                                                        style={{
+                                                                            borderColor:
+                                                                                technology.color,
+                                                                        }}
+                                                                        className='ml-lg-auto'
+                                                                    >
+                                                                        <Icon
+                                                                            src={technology.icon}
+                                                                            subFolder='technologies/'
+                                                                        />
+                                                                        {technology.name}
+                                                                    </li>
+                                                                )
+                                                            )}
+                                                        </ul>
+                                                    </div>
+                                                    <div className='col-8'>
+                                                        <div className='card-links justify-content-center justify-content-lg-start my-3 my-md-0'>
+                                                            {project.links.map((link, index) => (
+                                                                <div
+                                                                    className='card-link p-2 col-8 col-md-4'
+                                                                    key={`link-${index}`}
+                                                                >
+                                                                    {link.url ? (
+                                                                        <a
+                                                                            href={link.url}
+                                                                            target='blank'
+                                                                        >
+                                                                            <Icon
+                                                                                src={link.icon}
+                                                                                subFolder='external/'
+                                                                            />
+                                                                            {link.name}
+                                                                        </a>
+                                                                    ) : link.name ? (
+                                                                        <p className='card-link-header'>
+                                                                            {link.name}
+                                                                        </p>
+                                                                    ) : (
+                                                                        ''
+                                                                    )}
+
+                                                                    {link.urls
+                                                                        ? link.urls.map(
+                                                                              (
+                                                                                  linkGroup,
+                                                                                  index2
+                                                                              ) => (
+                                                                                  <a
+                                                                                      href={
+                                                                                          linkGroup.url
+                                                                                      }
+                                                                                      target='blank'
+                                                                                      key={`link-${
+                                                                                          index +
+                                                                                          index2
+                                                                                      }`}
+                                                                                  >
+                                                                                      <Icon
+                                                                                          src={
+                                                                                              linkGroup.icon
+                                                                                          }
+                                                                                          subFolder='external/'
+                                                                                      />
+                                                                                      {
+                                                                                          linkGroup.type
+                                                                                      }
+                                                                                  </a>
+                                                                              )
+                                                                          )
+                                                                        : ''}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
