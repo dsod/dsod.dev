@@ -1,8 +1,6 @@
 name = "dsod-dev"
 type = "webpack"
 workers_dev = false
-
-[env.production]
 route = "*dsod.dev/*"
 
 [site]
