@@ -92,10 +92,10 @@ const Projects = () => {
                                                                     (link, index) => (
                                                                         <li className='project-additional-link'>
                                                                             <div className='col-8'>
-                                                                                {link.name}
+                                                                                <h6>{link.name}</h6>
                                                                             </div>
 
-                                                                            <div className='col-8 d-flex justify-content-center flex-wrap'>
+                                                                            <div className='project-button-wrapper col-8 d-flex justify-content-start flex-wrap'>
                                                                                 {link.urls.map(
                                                                                     (
                                                                                         linkGroup,

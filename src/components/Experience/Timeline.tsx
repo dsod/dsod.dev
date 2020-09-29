@@ -68,7 +68,10 @@ const Timeline: React.FC = () => {
                     </div>
                 );
             })}
-            <div className={`timeline timeline-height-${ExperienceItems.length}`}></div>
+            <div className={`timeline timeline-height-${ExperienceItems.length}`}>
+                <div className='timeline-start'>2020</div>
+                <div className='timeline-stop'>2013</div>
+            </div>
 
             <div
                 className={`timeline-active ${

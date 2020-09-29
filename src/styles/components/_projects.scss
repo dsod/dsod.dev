@@ -44,15 +44,24 @@
         display: flex;
         flex-flow: column nowrap;
 
+        h6 {
+            color: $color-light;
+        }
+
         li.project-additional-link {
             border: none;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem 0;
+            padding: 0;
+            margin-bottom: 1rem;
             display: inline-flex;
             flex-flow: column nowrap;
             align-items: unset;
-            background-color: rgba(58, 58, 58, 0.5);
+            // background-color: rgba(58, 58, 58, 0.5);
             border-radius: 0.25rem;
+
+            & .project-button-wrapper {
+                margin-top: -0.5rem;
+                margin-left: -0.5rem;
+            }
 
             button {
                 @include cta-button;
@@ -61,8 +70,9 @@
                 display: flex;
                 align-items: center;
                 border-radius: 1.75rem;
-                margin: 0.75rem 1rem;
-                padding: 0.6rem;
+                padding: 0.25rem 0.75rem;
+                margin: 0 0.5rem;
+                margin-top: 0.5rem;
 
                 svg {
                     height: 1.5rem;

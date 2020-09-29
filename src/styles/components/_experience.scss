@@ -4,8 +4,8 @@ $timeline-section-expanded-height: 18rem;
 
 .timeline-wrapper {
     position: relative;
-    @include margin-top(3rem);
-    @include margin-bottom(3rem);
+    @include margin-top(7rem);
+    @include margin-bottom(7rem);
     display: flex;
     flex-flow: column nowrap;
 }
@@ -76,6 +76,50 @@ $timeline-section-expanded-height: 18rem;
     &-section.active ~ .timeline-active > .center {
         visibility: visible;
         opacity: 1;
+    }
+
+    &-start,
+    &-stop {
+        position: absolute;
+        width: 3rem;
+        left: calc(50% - 1.5rem);
+        color: $color-gray;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &-start {
+        margin-top: 1rem;
+        padding-bottom: 0.5rem;
+        top: -3rem;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 2rem;
+            left: calc(50% - 1.25rem);
+            width: 2.5rem;
+            height: 0.25rem;
+            background-color: $color-gray;
+            border-radius: 2px;
+        }
+    }
+
+    &-stop {
+        position: absolute;
+        bottom: -2.5rem;
+        padding-top: 1rem;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: -0.1rem;
+            left: calc(50% - 1.25rem);
+            width: 2.5rem;
+            height: 0.25rem;
+            background-color: $color-gray;
+            border-radius: 2px;
+        }
     }
 }
 .timeline-section {
