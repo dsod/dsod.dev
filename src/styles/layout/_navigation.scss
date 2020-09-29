@@ -197,6 +197,8 @@ body {
             position: fixed;
             bottom: 0rem;
             left: 1rem;
+            transition: left 0.2s;
+
             @for $i from 1 through 5 {
                 &:nth-last-child(#{$i}) {
                     bottom: calc((3.5rem * #{$i}) - 2.25rem);
@@ -204,6 +206,7 @@ body {
             }
 
             @include media-breakpoint-up(md) {
+                left: 2.25rem;
                 z-index: 1;
             }
 

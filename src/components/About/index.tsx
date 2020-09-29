@@ -9,28 +9,23 @@ const About = () => (
                 <SectionHeader section='About' />
                 <div className='row'>
                     <div className='col-8 col-lg-4 order-lg-0'>
+                        <p>What I aspire to be; a leader that lifts others</p>
+                        <p>
+                            What I am; team player, ambitious, open and honest, life-long learner,
+                            thorough
+                        </p>
                         <p>
                             I have rich experience in technical project management, consultancy and
                             system integrations.
                         </p>
                         <p>
-                            For the last couple of years I have been self-studying software
-                            development on the side of my full-time position at a software company.
+                            Recently, my responsibilities grew towards managing development
+                            inquiries from customers and internal stakeholders. This is when I
+                            realized that I want to work with software development full-time.
                         </p>
-
                         <p>
-                            While not coding day-to-day at work, I've accumulated knowledge about
-                            software development from a market, sales and customer perspective.
-                        </p>
-
-                        <p>
-                            When my responsibilities grew closer to software development, I realized
-                            that this is what I want to do.
-                        </p>
-
-                        <p>
-                            For the last couple of months I have been self-studying software
-                            development full time.
+                            For the last couple of months, I have invested my time into making this
+                            career change a reality.
                         </p>
                     </div>
                     <div className='col-8 col-lg-4 align-self-center ml-lg-auto'>

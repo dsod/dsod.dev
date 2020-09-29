@@ -2,35 +2,40 @@
 {
     "professional": [
         {
-            "name": "Problem Solving",
+            "name": "End-user Focused",
             "texts": [
-                "While this always have come easy to me, problem solving frequently during a long period of time have given me other perks, apart from actually finding solutions.",
-                "I use situations like this as an opportunity to paint a bigger picture of how systems, cultures or individuals work.",
-                "This allow me to rapidly learn new things, adapt and generate value to stakeholders within a short period of time."
+                "What makes up for great user experience is to get ahead of users in deliverables and incidents, showing that we are on top of things.",
+                "To achieve this, I make sure to have a solid understanding of end-users; their pains, and how we can make their life easier by delivering end-user aware software."
+            ]
+        },
+        {
+            "name": "Problem-solving",
+            "texts": [
+                "I like challenges, and therefore also problem-solving. This is something that always has come easy to me and my career has involved a lot of problem-solving.",
+                "I use it as a tool to accelerate learning, which has been especially useful when learning software development.",
+                "While this is a part of every job, my interest very much lies in preventing problems in the first place."
             ]
         },
         {
             "name": "Defining Requirements",
             "texts": [
                 "When implementing enterprise software into organizations with varying needs, defining their goals and requirements is key to success.",
-                "I have found that illustrating solutions, in addition to discussions and documentation, is a great tool to make sure all parties are on the same page.",
-                "Just as important, is defining what is out of scope, in order to prevent (to much) scope creep.",
-                "I have worked close together with a software development team and have been responsible for defining and reproducing user stories and bugs respectively, with acceptance test cases and reproducible steps.",
+                "Just as important, is defining what is out of scope, in order to prevent (too much) scope creep.",
+                "I have worked closely together with a software development team and have been responsible for defining and reproducing user stories and bugs respectively, with acceptance test cases and reproducible steps.",
                 "With several years of experience in this area, I feel at home managing requirements from different stakeholders."                    
             ]
         },
         {
             "name": "Communication",
             "texts": [
-                "I have experience with managing projects with stakeholders from several different business areas who have varying levels of technical knowledge.",
-                "While technical forums is where I feel at home, I have grown custom to adjusting the level of technical terms in discussions as needed."
+                "I have experience with managing projects with stakeholders from several different business areas who have had varying levels of technical knowledge.",
+                "While technical forums are where I feel at home, I have grown custom to adjusting the level of technical terms in discussions as needed."
             ]
         },
         {
             "name": "Quality Assurement",
             "texts": [
-                "My department was responsible for both acceptance testing and rolling out new releases of software to customers.",
-                "This process was conducted in close collaboration with the software development team."
+                "As Integration Manager, my department was responsible for both acceptance testing and rolling out new releases of the software to medium-large customers."
             ]
         }
     ],
