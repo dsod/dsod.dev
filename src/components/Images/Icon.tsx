@@ -4,9 +4,10 @@ type NavIconProps = {
     src: string;
     subFolder?: string;
     classes?: string;
+    href?: string;
 };
 
-const NavIcon = ({ src, subFolder = '', classes }: NavIconProps) => {
+const NavIcon = ({ src, subFolder = '', classes, href }: NavIconProps) => {
     const ImportedIconRef = React.useRef<React.FC<React.SVGProps<SVGSVGElement>>>();
     const [loading, setLoading] = React.useState(false);
 
@@ -25,9 +26,13 @@ const NavIcon = ({ src, subFolder = '', classes }: NavIconProps) => {
         iconImport();
     }, [src]);
 
+    const handleClick = (link: string | undefined) => {
+        if (link) window.open(link);
+    };
+
     if (!loading && ImportedIconRef.current) {
         const { current: ImportedIcon } = ImportedIconRef;
-        return <ImportedIcon className={classes} />;
+        return <ImportedIcon className={classes} onClick={() => handleClick(href)} />;
     }
 
     return null;

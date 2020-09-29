@@ -146,23 +146,4 @@ $card-image-height: 20rem;
             opacity: 0;
         }
     }
-
-    &-links {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    &-link {
-        p {
-            color: $color-light;
-        }
-
-        a {
-            padding: 0.25rem;
-            color: $color-low-profile;
-
-            &:hover {
-                color: $color-accent-dark;
-            }
-        }
-    }
 }

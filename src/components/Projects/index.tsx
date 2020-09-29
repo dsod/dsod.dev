@@ -3,6 +3,7 @@ import SectionHeader from '../Shared/SectionHeader';
 import Icon from 'components/Images/Icon';
 import Image from 'components/Images';
 import ProjectItems from 'content/projects.json';
+import CallToActionButton from 'components/Shared/CallToActionButton';
 
 const Projects = () => {
     return (
@@ -13,7 +14,7 @@ const Projects = () => {
                     <div className='row justify-content-center'>
                         <div className='col-8 col-md-6 col-xl-5'>
                             {ProjectItems.map((project, index) => (
-                                <div key={`project-${index}`} className='card my-3 m-lg-3'>
+                                <div key={`project-${index}`} className='project card my-3 m-lg-3'>
                                     {project.image ? (
                                         <div className='card-image-wrapper'>
                                             <div className='card-image'>
@@ -35,12 +36,24 @@ const Projects = () => {
 
                                     <div className='card-wrapper'>
                                         <div className='card-header flex-wrap'>
-                                            <div className='col-6'>
+                                            <div className='col-8'>
                                                 <h4>{project.name}</h4>
                                                 <h5>{project.category}</h5>
                                             </div>
                                         </div>
-                                        <div className='card-section'>
+                                        <div className='card-section mb-0'>
+                                            <div className='col-8 d-flex flex-wrap mb-4 project-main-links'>
+                                                {project.mainLinks.map((mainLink, index) => (
+                                                    <CallToActionButton
+                                                        key={`main-link-${index}`}
+                                                        iconSrc={mainLink.icon}
+                                                        iconSrcSubfolder='external/'
+                                                        classNames='project-main-link'
+                                                    >
+                                                        <span>{mainLink.name}</span>
+                                                    </CallToActionButton>
+                                                ))}
+                                            </div>
                                             <div className='card-body'>
                                                 <div className='row'>
                                                     <div className='col-8 col-lg-5'>
@@ -68,65 +81,57 @@ const Projects = () => {
                                                             )}
                                                         </ul>
                                                     </div>
-                                                    <div className='col-8'>
-                                                        <div className='card-links justify-content-center justify-content-lg-start my-3 my-md-0'>
-                                                            {project.links.map((link, index) => (
-                                                                <div
-                                                                    className='card-link p-2 col-8 col-md-4'
-                                                                    key={`link-${index}`}
-                                                                >
-                                                                    {link.url ? (
-                                                                        <a
-                                                                            href={link.url}
-                                                                            target='blank'
-                                                                        >
-                                                                            <Icon
-                                                                                src={link.icon}
-                                                                                subFolder='external/'
-                                                                            />
-                                                                            {link.name}
-                                                                        </a>
-                                                                    ) : link.name ? (
-                                                                        <p className='card-link-header'>
-                                                                            {link.name}
-                                                                        </p>
-                                                                    ) : (
-                                                                        ''
-                                                                    )}
+                                                    {project.projectLinks.length ? (
+                                                        <div className='col-8'>
+                                                            <h5>Course Assignments</h5>
+                                                            <ul
+                                                                className='project-additional-links col-8'
+                                                                key={`link-${index}`}
+                                                            >
+                                                                {project.projectLinks.map(
+                                                                    (link, index) => (
+                                                                        <li className='project-additional-link'>
+                                                                            <div className='col-8'>
+                                                                                {link.name}
+                                                                            </div>
 
-                                                                    {link.urls
-                                                                        ? link.urls.map(
-                                                                              (
-                                                                                  linkGroup,
-                                                                                  index2
-                                                                              ) => (
-                                                                                  <a
-                                                                                      href={
-                                                                                          linkGroup.url
-                                                                                      }
-                                                                                      target='blank'
-                                                                                      key={`link-${
-                                                                                          index +
-                                                                                          index2
-                                                                                      }`}
-                                                                                  >
-                                                                                      <Icon
-                                                                                          src={
-                                                                                              linkGroup.icon
-                                                                                          }
-                                                                                          subFolder='external/'
-                                                                                      />
-                                                                                      {
-                                                                                          linkGroup.type
-                                                                                      }
-                                                                                  </a>
-                                                                              )
-                                                                          )
-                                                                        : ''}
-                                                                </div>
-                                                            ))}
+                                                                            <div className='col-8 d-flex justify-content-center flex-wrap'>
+                                                                                {link.urls.map(
+                                                                                    (
+                                                                                        linkGroup,
+                                                                                        index2
+                                                                                    ) => (
+                                                                                        <CallToActionButton
+                                                                                            key={`link-${
+                                                                                                index +
+                                                                                                index2
+                                                                                            }`}
+                                                                                            iconSrc={
+                                                                                                linkGroup.icon
+                                                                                            }
+                                                                                            iconSrcSubfolder='external/'
+                                                                                            classNames=''
+                                                                                            href={
+                                                                                                linkGroup.url
+                                                                                            }
+                                                                                        >
+                                                                                            <span>
+                                                                                                {
+                                                                                                    linkGroup.type
+                                                                                                }
+                                                                                            </span>
+                                                                                        </CallToActionButton>
+                                                                                    )
+                                                                                )}
+                                                                            </div>
+                                                                        </li>
+                                                                    )
+                                                                )}
+                                                            </ul>
                                                         </div>
-                                                    </div>
+                                                    ) : (
+                                                        ''
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>

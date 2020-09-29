@@ -1,11 +1,13 @@
 footer {
     background-color: black;
     @include padding-top(10rem);
+
     display: flex;
     flex-flow: row wrap;
     text-align: center;
 
     svg {
         margin: 1rem;
+        cursor: pointer;
     }
 }

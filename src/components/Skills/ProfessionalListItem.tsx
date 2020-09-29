@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Icon from 'components/Images/Icon';
+import CallToActionButton from 'components/Shared/CallToActionButton';
 
 type ProfessionalListItemProps = {
     listItem: string;
@@ -14,13 +14,22 @@ const ProfessionalListItem: React.FC<ProfessionalListItemProps> = ({ listItem, c
 
     return (
         <li className='skills-item'>
-            <div className='skills-header d-flex align-items-center' onClick={handleClick}>
-                {skillActive ? (
-                    <Icon src='collapse-list-item.svg' />
-                ) : (
-                    <Icon src='expand-list-item.svg' />
-                )}
+            <div
+                className='skills-header d-flex align-items-center justify-content-between'
+                onClick={handleClick}
+            >
                 <h5 className='m-0'>{listItem}</h5>
+                {skillActive ? (
+                    <CallToActionButton
+                        iconSrc='collapse-list-item.svg'
+                        classNames='skills-accordion'
+                    />
+                ) : (
+                    <CallToActionButton
+                        iconSrc='expand-list-item.svg'
+                        classNames='skills-accordion'
+                    />
+                )}
             </div>
             <div className={`skills-body ${skillActive ? 'active' : ''}`}>{children}</div>
         </li>

@@ -23,7 +23,7 @@ const Header = () => (
                     </div>
                 </div>
                 <div className='picture col-6 col-lg-4'>
-                    <Image src='profile@2x.png' alt='Profile Image' />
+                    <Image src='profile.png' alt='Profile Image' />
                 </div>
             </div>
         </div>

@@ -1,0 +1,74 @@
+#projects {
+    @include padding-bottom(4rem);
+}
+
+.project {
+    &-main-links {
+        flex-wrap: wrap;
+        button {
+            margin: 0.25rem;
+        }
+
+        & button:first-child {
+            margin-left: 0;
+        }
+
+        & button:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-main-link {
+        @include cta-button;
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        width: fit-content;
+        border-radius: 1.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        transition: padding 0.2s, width 0.2s, color 0.2s, border-color 0.2s;
+
+        svg {
+            margin-right: 0.5rem;
+        }
+
+        &:hover,
+        &:active {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    ul.project-additional-links {
+        display: flex;
+        flex-flow: column nowrap;
+
+        li.project-additional-link {
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            display: inline-flex;
+            flex-flow: column nowrap;
+            align-items: unset;
+            background-color: rgba(58, 58, 58, 0.5);
+            border-radius: 0.25rem;
+
+            button {
+                @include cta-button;
+                height: auto;
+                width: auto;
+                display: flex;
+                align-items: center;
+                border-radius: 1.75rem;
+                margin: 0.75rem 1rem;
+                padding: 0.6rem;
+
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
+}

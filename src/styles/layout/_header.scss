@@ -65,5 +65,14 @@ header {
         max-width: 500px;
         @include margin-top(2rem);
         @include margin-bottom(2rem);
+
+        @include media-breakpoint-up(lg) {
+            @include margin-right(2rem);
+        }
+
+        img {
+            border: 1.5px solid $color-accent-dark;
+            border-radius: 50%;
+        }
     }
 }

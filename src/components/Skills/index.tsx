@@ -13,25 +13,6 @@ const Skills = () => {
                     <SectionHeader section='Skills' />
                     <div className='row'>
                         <div className='col-8 col-lg-4'>
-                            <div className='card mr-lg-3 my-2'>
-                                <div className='card-wrapper'>
-                                    <h4>Professional</h4>
-                                    <ul>
-                                        {SkillItems.professional.map((skill, index) => (
-                                            <ProfessionalListItem
-                                                key={`professional-${index}`}
-                                                listItem={skill.name}
-                                            >
-                                                {skill.texts.map((text, index) => (
-                                                    <p key={`text-${index}`}>{text}</p>
-                                                ))}
-                                            </ProfessionalListItem>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col-8 col-lg-4'>
                             <div className='card ml-lg-2 my-2'>
                                 <div className='card-wrapper'>
                                     <h4>Technological</h4>
@@ -63,6 +44,25 @@ const Skills = () => {
                                             </div>
                                         </div>
                                     ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col-8 col-lg-4'>
+                            <div className='card mr-lg-3 my-2'>
+                                <div className='card-wrapper'>
+                                    <h4 className='mb-4'>Professional</h4>
+                                    <ul>
+                                        {SkillItems.professional.map((skill, index) => (
+                                            <ProfessionalListItem
+                                                key={`professional-${index}`}
+                                                listItem={skill.name}
+                                            >
+                                                {skill.texts.map((text, index) => (
+                                                    <p key={`text-${index}`}>{text}</p>
+                                                ))}
+                                            </ProfessionalListItem>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
                         </div>

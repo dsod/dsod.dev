@@ -4,13 +4,14 @@
         "category": "Company Website",
         "description": "The company website of a lighting & interior architecture firm. The backend is built with wordpress, sql and twig for server-side page rendering. The frontend is built with vanilla javascript and scss, bundled with webpack. Development environment are run through docker containers. The pages are built with reusable components and is managed by the company through the wordpress CMS.",
         "image": "tittstudio.png",
-        "links": [
+        "mainLinks": [
             {
                 "name": "Website",
                 "url": "https://tittstudio.se",
                 "icon": "external-link-icon.svg"
             }
         ],
+        "projectLinks": [],
         "technologies": [
             {
                 "name": "PHP",
@@ -46,12 +47,12 @@
     },
     {
         "name": "dsod.dev",
-        "category": "Personal portfolio website",
+        "category": "Personal Portfolio Website",
         "image": "",
         "description": "The website you are currently on. I've built it with modern development tools such as gatsbyjs, react hooks and parts of bootstrap 5 (grid & reboot). I prototyped and created assets in Adobe XD, before starting development and the i've used mobile-first design & implementation throughout the process. ",
-        "links": [
+        "mainLinks": [
             {
-                "name": "GitHub Repository",
+                "name": "GitHub",
                 "url": "https://github.com/dsod/dsod.dev",
                 "icon": "github-icon.svg"
             },
@@ -61,6 +62,7 @@
                 "icon": "external-link-icon.svg"
             }
         ],
+        "projectLinks": [],
         "technologies": [
             {
                 "name": "Typescript",
@@ -89,105 +91,90 @@
         "category": "Online Course",
         "image": "",
         "description": "The 300-hour course contains hands-on excercises for learning font-end libraries, such as Bootstrap, SCSS, jQuery, React and Redux. When introducing each technology you code in a online IDE and have to complete automated tests to go through each section in the course. Finishing up you have to create 5 different pet projects in a development environment of your own choosing and use their testing library in order to verify the functionality of the application. Upon completion you receive a certification (see links below).",
-        "links": [
+        "mainLinks": [
             {
-                "name": "External Links",
-                "url": "",
-                "icon": "",
-                "urls": [
-                    {
-                        "type": "Certificate",
-                        "url": "https://www.freecodecamp.org/certification/dsod/front-end-libraries",
-                        "icon": "certificate-icon.svg"
-                    },
-                    {
-                        "type": "Course Content",
-                        "url": "https://www.freecodecamp.org/learn",
-                        "icon": "external-link-icon.svg"
-                    }
-                ]
+                "name": "Certificate",
+                "url": "https://www.freecodecamp.org/certification/dsod/front-end-libraries",
+                "icon": "certificate-icon.svg"
             },
             {
+                "name": "Course Content",
+                "url": "https://www.freecodecamp.org/learn",
+                "icon": "external-link-icon.svg"
+            }
+        ],
+        "projectLinks": [
+            {
                 "name": "Random Quote Machine",
-                "url": "",
-                "icon": "",
                 "urls": [
                     {
-                        "type": "Project Website",
+                        "type": "Project Site",
                         "url": "https://fcc-rqm.dsod.dev",
                         "icon": "project-icon.svg"
                     },
                     {
-                        "type": "GitHub Repository",
-                        "url": "",
+                        "type": "GitHub",
+                        "url": "https://github.com/dsod/fcc-random-quote-machine",
                         "icon": "github-icon.svg"
                     }
                 ]
             },
             {
                 "name": "Markdown Previewer",
-                "url": "",
-                "icon": "",
                 "urls": [
                     {
-                        "type": "Project Website",
+                        "type": "Project Site",
                         "url": "https://fcc-mp.dsod.dev",
                         "icon": "project-icon.svg"
                     },
                     {
-                        "type": "GitHub Repository",
-                        "url": "",
+                        "type": "GitHub",
+                        "url": "https://github.com/dsod/fcc-markdown-previewer",
                         "icon": "github-icon.svg"
                     }
                 ]
             },
             {
                 "name": "Drum Machine",
-                "url": "",
-                "icon": "",
                 "urls": [
                     {
-                        "type": "Project Website",
+                        "type": "Project Site",
                         "url": "https://fcc-dm.dsod.dev",
                         "icon": "project-icon.svg"
                     },
                     {
-                        "type": "GitHub Repository",
-                        "url": "",
+                        "type": "GitHub",
+                        "url": "https://github.com/dsod/fcc-drum-machine",
                         "icon": "github-icon.svg"
                     }
                 ]
             },
             {
                 "name": "Calculator",
-                "url": "",
-                "icon": "",
                 "urls": [
                     {
-                        "type": "Project Website",
+                        "type": "Project Site",
                         "url": "https://fcc-calculator.dsod.dev",
                         "icon": "project-icon.svg"
                     },
                     {
-                        "type": "GitHub Repository",
-                        "url": "",
+                        "type": "GitHub",
+                        "url": "https://github.com/dsod/fcc-calculator",
                         "icon": "github-icon.svg"
                     }
                 ]
             },
             {
                 "name": "Pomodoro Clock",
-                "url": "",
-                "icon": "",
                 "urls": [
                     {
-                        "type": "Project Website",
+                        "type": "Project Site",
                         "url": "https://fcc-pc.dsod.dev",
                         "icon": "project-icon.svg"
                     },
                     {
-                        "type": "GitHub Repository",
-                        "url": "",
+                        "type": "GitHub",
+                        "url": "https://github.com/dsod/fcc-pomodoro-clock",
                         "icon": "github-icon.svg"
                     }
                 ]

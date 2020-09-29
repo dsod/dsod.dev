@@ -5,6 +5,7 @@
 @import '~bootstrap/scss/reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 @import 'base';
+@import './components/callToActionButton';
 @import './layout/header';
 @import './layout/footer';
 @import './components/main';
@@ -14,3 +15,4 @@
 @import './components/sectionHeader';
 @import './components/progressbar';
 @import './components/card';
+@import './components/projects';

@@ -1,0 +1,32 @@
+@mixin cta-button {
+    position: relative;
+    padding: 0.25rem 0.25rem;
+    background-color: transparent;
+    color: $color-light;
+    border: 2px solid $color-accent;
+    border-radius: 50%;
+    transition: border-color 0.1s, color 0.1s;
+    line-height: 0;
+
+    > svg {
+        path {
+            fill: $color-accent;
+        }
+    }
+
+    &:hover,
+    &:active {
+        border-color: $color-accent-dark;
+        color: $color-accent-dark;
+
+        > svg {
+            path {
+                fill: $color-accent-dark;
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
