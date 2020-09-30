@@ -136,6 +136,10 @@ $timeline-section-expanded-height: 18rem;
         color: $color-gray;
         transition: color 0.3s;
 
+        h3 {
+            font-size: $h5-font-size;
+        }
+
         p {
             font-style: italic;
             opacity: 0;
@@ -165,7 +169,7 @@ $timeline-section-expanded-height: 18rem;
         height: $timeline-section-expanded-height;
 
         .timeline-role {
-            h5 {
+            h3 {
                 color: $color-accent;
             }
 

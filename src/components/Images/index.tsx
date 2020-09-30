@@ -19,7 +19,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, styles }) => (
                             name
                             childImageSharp {
                                 fluid(maxWidth: 600) {
-                                    ...GatsbyImageSharpFluid
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }

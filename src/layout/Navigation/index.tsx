@@ -1,4 +1,4 @@
-import React, { createRef, MouseEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { createRef, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import NavigationItems from 'content/navigation.json';
 import Progressbar from './Progressbar';
@@ -8,9 +8,9 @@ import CallToActionButton from 'components/Shared/CallToActionButton';
 
 type SectionPosition = {
     elementId: string;
-    offsetTop: number;
-    height: number;
-};
+    offsetTop: number | undefined;
+    height: number | undefined;
+} | null;
 
 type SectionPositions = SectionPosition[];
 
@@ -26,17 +26,17 @@ const Navigation: React.FC = () => {
     const pageSections = useRef<SectionPositions>();
     const activeSectionBreakpoint = useRef(0);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         activeSectionBreakpoint.current = window.innerHeight * 0.2;
         pageSections.current = NavigationItems.reduce<SectionPositions>(
             (previousValue, section) => {
                 const element = document.getElementById(section.href.split('#')[1]);
                 const sectionPosition: SectionPosition = {
                     elementId: section.href,
-                    offsetTop: element!.offsetTop,
-                    height: element!.scrollHeight,
+                    offsetTop: element?.offsetTop,
+                    height: element?.scrollHeight,
                 };
-                sectionPosition ? previousValue.push(sectionPosition) : null;
+                sectionPosition?.offsetTop ? previousValue.push(sectionPosition) : null;
                 return previousValue;
             },
             []
@@ -49,6 +49,7 @@ const Navigation: React.FC = () => {
 
             const currentBreakpoint = window.scrollY + activeSectionBreakpoint.current;
             pageSections.current.forEach((section, index) => {
+                if (!section?.offsetTop || !section.height) return;
                 if (
                     currentBreakpoint > section.offsetTop &&
                     currentBreakpoint < section.offsetTop + section.height
@@ -104,6 +105,7 @@ const Navigation: React.FC = () => {
                         iconSrcSubfolder='about/'
                         classNames='navigation-contact-button m-2'
                         toggleElement='phone'
+                        label='Button to toggle phone number visibility'
                     >
                         <div id='phone' className='navigation-contact-popover'>
                             <a href='tel:+46(0)73 390 29 25'>
@@ -116,6 +118,7 @@ const Navigation: React.FC = () => {
                         iconSrcSubfolder='about/'
                         classNames='navigation-contact-button m-2'
                         toggleElement='email'
+                        label='Button to toggle email visibility'
                     >
                         <div id='email' className='navigation-contact-popover'>
                             <a href='mailto:d.soderling@live.se' className='mx-2'>

@@ -15,7 +15,7 @@ const Skills = () => {
                         <div className='col-8 col-lg-4'>
                             <div className='card ml-lg-2 my-2'>
                                 <div className='card-wrapper'>
-                                    <h4>Technological</h4>
+                                    <h3>Technological</h3>
                                     {SkillItems.technical.map((skill, index) => (
                                         <div key={`technical-${index}`} className='card-section'>
                                             <div className='card-header'>
@@ -24,7 +24,7 @@ const Skills = () => {
                                                     subFolder='technologies/'
                                                     classes='card-icon'
                                                 />
-                                                <h5>{skill.category}</h5>
+                                                <h4>{skill.category}</h4>
                                             </div>
                                             <div className='card-body'>
                                                 <ul>
@@ -50,7 +50,7 @@ const Skills = () => {
                         <div className='col-8 col-lg-4'>
                             <div className='card mr-lg-3 my-2'>
                                 <div className='card-wrapper'>
-                                    <h4 className='mb-4'>Professional</h4>
+                                    <h3 className='mb-4'>Professional</h3>
                                     <ul>
                                         {SkillItems.professional.map((skill, index) => (
                                             <ProfessionalListItem

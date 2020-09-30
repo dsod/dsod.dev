@@ -37,8 +37,8 @@ const Projects = () => {
                                     <div className='card-wrapper'>
                                         <div className='card-header flex-wrap'>
                                             <div className='col-8'>
-                                                <h4>{project.name}</h4>
-                                                <h5>{project.category}</h5>
+                                                <h3>{project.name}</h3>
+                                                <h4>{project.category}</h4>
                                             </div>
                                         </div>
                                         <div className='card-section mb-0'>
@@ -49,6 +49,7 @@ const Projects = () => {
                                                         iconSrc={mainLink.icon}
                                                         iconSrcSubfolder='external/'
                                                         classNames='project-main-link'
+                                                        label={`${project.name} link to ${mainLink.name}`}
                                                     >
                                                         <span>{mainLink.name}</span>
                                                     </CallToActionButton>
@@ -90,7 +91,10 @@ const Projects = () => {
                                                             >
                                                                 {project.projectLinks.map(
                                                                     (link, index) => (
-                                                                        <li className='project-additional-link'>
+                                                                        <li
+                                                                            className='project-additional-link'
+                                                                            key={`link-${index}`}
+                                                                        >
                                                                             <div className='col-8'>
                                                                                 <h6>{link.name}</h6>
                                                                             </div>
@@ -114,6 +118,7 @@ const Projects = () => {
                                                                                             href={
                                                                                                 linkGroup.url
                                                                                             }
+                                                                                            label={`Link to ${link.name} ${linkGroup.type}`}
                                                                                         >
                                                                                             <span>
                                                                                                 {

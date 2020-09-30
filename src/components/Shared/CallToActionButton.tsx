@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Icon from 'components/Images/Icon';
 
 type CallToActionButtonProps = {
@@ -9,6 +9,7 @@ type CallToActionButtonProps = {
     href?: string;
     iconFirst?: boolean;
     toggleElement?: string;
+    label: string;
 };
 
 const CallToActionButton: React.FC<CallToActionButtonProps> = ({
@@ -20,6 +21,7 @@ const CallToActionButton: React.FC<CallToActionButtonProps> = ({
     href,
     iconFirst = true,
     toggleElement,
+    label,
 }) => {
     const handleButtonClick = (link: string | undefined, toggleElement: string | undefined) => {
         if (link) {
@@ -37,6 +39,7 @@ const CallToActionButton: React.FC<CallToActionButtonProps> = ({
             className={`${classNames}`}
             style={styles}
             onClick={() => handleButtonClick(href, toggleElement)}
+            aria-label={label}
         >
             {!iconFirst ? children : ''}
             {iconSrc ? <Icon src={iconSrc} subFolder={iconSrcSubfolder} /> : ''}
