@@ -6,7 +6,6 @@
         border-radius: 4px;
         background-color: rgba(58, 58, 58, 0.5);
         cursor: pointer;
-        z-index: 5;
 
         svg {
             height: 0.75rem;
@@ -21,12 +20,14 @@
 
     &-body {
         max-height: 0;
-        transition: max-height 0.1s ease-out;
         padding: 0 1rem;
+        opacity: 0;
+        transition: max-height 0.1s ease-out, opacity 0.1s;
 
         &.active {
             max-height: 1000px;
-            transition: max-height 0.25s ease-in;
+            opacity: 1;
+            transition: max-height 0.25s ease-in, opacity 0.1s;
         }
     }
 

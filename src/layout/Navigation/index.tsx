@@ -78,64 +78,65 @@ const Navigation: React.FC = () => {
     };
 
     return (
-        <div className='navigation-wrapper'>
-            <nav>
-                <button className='navigation-toggle' onClick={toggleNavigation}>
-                    {navigationOpen ? (
-                        <Icon src='close-nav.svg' subFolder='navigation/' />
-                    ) : (
-                        <Icon src='open-nav.svg' subFolder='navigation/' />
-                    )}
-                </button>
-                <div className={`navigation-collapsable ${navigationOpen ? 'active' : ''}`}>
-                    <ul>
-                        {NavigationItems.map((navItem, index) => {
-                            return (
-                                <li
-                                    key={`nav-item${index}`}
-                                    onClick={(event) => handleClick(event, navItem.href)}
-                                    ref={navItemElements[index]}
-                                    className={index === activeSection ? 'active' : ''}
-                                >
-                                    {index != 0 ? (
-                                        <div className='navigation-separator'></div>
-                                    ) : null}
-                                    <Icon src={`${navItem.icon}`} subFolder='navigation/' />
-                                    <a href={navItem.href}>{navItem.name}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-            </nav>
-            <div className='navigation-contact d-flex flex-column'>
-                <CallToActionButton
-                    iconSrc='phone-icon.svg'
-                    iconSrcSubfolder='about/'
-                    classNames='navigation-contact-button m-2'
-                    toggleElement='phone'
-                >
-                    <div id='phone' className='navigation-contact-popover'>
-                        <a href='tel:+46(0)73 390 29 25'>
-                            +46&nbsp;(0)&nbsp;73&nbsp;390&nbsp;29&nbsp;25
-                        </a>
-                    </div>
-                </CallToActionButton>
-                <CallToActionButton
-                    iconSrc='email-icon.svg'
-                    iconSrcSubfolder='about/'
-                    classNames='navigation-contact-button m-2'
-                    toggleElement='email'
-                >
-                    <div id='email' className='navigation-contact-popover'>
-                        <a href='mailto:d.soderling@live.se' className='mx-2'>
-                            d.soderling@live.se
-                        </a>
-                    </div>
-                </CallToActionButton>
+        <nav className='navigation-wrapper'>
+            <div className={`navigation-collapsable ${navigationOpen ? 'active' : ''}`}>
+                <ul>
+                    {NavigationItems.map((navItem, index) => {
+                        return (
+                            <li
+                                key={`nav-item${index}`}
+                                onClick={(event) => handleClick(event, navItem.href)}
+                                ref={navItemElements[index]}
+                                className={index === activeSection ? 'active' : ''}
+                            >
+                                {index != 0 ? <div className='navigation-separator'></div> : null}
+                                <Icon src={`${navItem.icon}`} subFolder='navigation/' />
+                                <a href={navItem.href}>{navItem.name}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
+            {!navigationOpen ? (
+                <div className='navigation-contact-wrapper'>
+                    <CallToActionButton
+                        iconSrc='phone-icon.svg'
+                        iconSrcSubfolder='about/'
+                        classNames='navigation-contact-button m-2'
+                        toggleElement='phone'
+                    >
+                        <div id='phone' className='navigation-contact-popover'>
+                            <a href='tel:+46(0)73 390 29 25'>
+                                +46&nbsp;(0)&nbsp;73&nbsp;390&nbsp;29&nbsp;25
+                            </a>
+                        </div>
+                    </CallToActionButton>
+                    <CallToActionButton
+                        iconSrc='email-icon.svg'
+                        iconSrcSubfolder='about/'
+                        classNames='navigation-contact-button m-2'
+                        toggleElement='email'
+                    >
+                        <div id='email' className='navigation-contact-popover'>
+                            <a href='mailto:d.soderling@live.se' className='mx-2'>
+                                d.soderling@live.se
+                            </a>
+                        </div>
+                    </CallToActionButton>
+                </div>
+            ) : (
+                ''
+            )}
+
+            <button className='navigation-toggle' onClick={toggleNavigation}>
+                {navigationOpen ? (
+                    <Icon src='close-nav.svg' subFolder='navigation/' />
+                ) : (
+                    <Icon src='open-nav.svg' subFolder='navigation/' />
+                )}
+            </button>
             <Progressbar />
-        </div>
+        </nav>
     );
 };
 
