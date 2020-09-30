@@ -8,9 +8,9 @@ import CallToActionButton from 'components/Shared/CallToActionButton';
 
 type SectionPosition = {
     elementId: string;
-    offsetTop: number | undefined;
-    height: number | undefined;
-} | null;
+    offsetTop: number;
+    height: number;
+};
 
 type SectionPositions = SectionPosition[];
 
@@ -33,10 +33,10 @@ const Navigation: React.FC = () => {
                 const element = document.getElementById(section.href.split('#')[1]);
                 const sectionPosition: SectionPosition = {
                     elementId: section.href,
-                    offsetTop: element?.offsetTop,
-                    height: element?.scrollHeight,
+                    offsetTop: element!.offsetTop,
+                    height: element!.scrollHeight,
                 };
-                sectionPosition?.offsetTop ? previousValue.push(sectionPosition) : null;
+                sectionPosition ? previousValue.push(sectionPosition) : null;
                 return previousValue;
             },
             []
@@ -131,7 +131,11 @@ const Navigation: React.FC = () => {
                 ''
             )}
 
-            <button className='navigation-toggle' onClick={toggleNavigation}>
+            <button
+                className='navigation-toggle'
+                onClick={toggleNavigation}
+                aria-label='Toggle Menu on Mobile'
+            >
                 {navigationOpen ? (
                     <Icon src='close-nav.svg' subFolder='navigation/' />
                 ) : (

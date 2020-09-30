@@ -55,11 +55,6 @@
                 "name": "GitHub",
                 "url": "https://github.com/dsod/dsod.dev",
                 "icon": "github-icon.svg"
-            },
-            {
-                "name": "Website",
-                "url": "https://dsod.dev",
-                "icon": "external-link-icon.svg"
             }
         ],
         "projectLinks": [],

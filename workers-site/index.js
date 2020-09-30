@@ -41,6 +41,11 @@ async function handleEvent(event) {
         bypassCache: true,
       }
     }
+    else if (url.pathname.match(/(?:.js)$/)) {
+      options.cacheControl = {
+        browserTTL: 31536000
+      }
+    }
     return await getAssetFromKV(event, options)
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html

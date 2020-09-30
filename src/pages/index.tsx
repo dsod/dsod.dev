@@ -1,28 +1,21 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 
 import Layout from '../layout/Layout';
 import SEO from '../components/SEO';
 import '../styles/index.scss';
-const About = React.lazy(() => import('../components/About'));
-const Experience = React.lazy(() => import('../components/Experience'));
-const Skills = React.lazy(() => import('../components/Skills'));
-const Projects = React.lazy(() => import('../components/Projects'));
+import About from '../components/About';
+import Experience from '../components/Experience';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
 
-const IndexPage = () => {
-    const isSSR = typeof window === 'undefined';
-    return (
-        <Layout>
-            <SEO title='Daniel Söderling' />
-            {!isSSR && (
-                <Suspense fallback={<div>Loading...</div>}>
-                    <About />
-                    <Experience />
-                    <Skills />
-                    <Projects />
-                </Suspense>
-            )}
-        </Layout>
-    );
-};
+const IndexPage = () => (
+    <Layout>
+        <SEO title='Daniel Söderling' />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+    </Layout>
+);
 
 export default IndexPage;

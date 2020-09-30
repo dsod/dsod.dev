@@ -52,7 +52,7 @@ const Timeline: React.FC = () => {
                 return (
                     <div key={`experience_${index}`} className={style} ref={sectionElements[index]}>
                         <div className='timeline-role'>
-                            <h3>{data.role}</h3>
+                            <h3 className='h5'>{data.role}</h3>
                             <p>{`${data.company} - ${data.duration}`}</p>
                         </div>
                         <ul className='timeline-learnings'>

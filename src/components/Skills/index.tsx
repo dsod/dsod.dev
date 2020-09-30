@@ -24,7 +24,7 @@ const Skills = () => {
                                                     subFolder='technologies/'
                                                     classes='card-icon'
                                                 />
-                                                <h4>{skill.category}</h4>
+                                                <h4 className='h5'>{skill.category}</h4>
                                             </div>
                                             <div className='card-body'>
                                                 <ul>

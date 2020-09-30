@@ -48,6 +48,7 @@ const Projects = () => {
                                                         key={`main-link-${index}`}
                                                         iconSrc={mainLink.icon}
                                                         iconSrcSubfolder='external/'
+                                                        href={mainLink.url}
                                                         classNames='project-main-link'
                                                         label={`${project.name} link to ${mainLink.name}`}
                                                     >

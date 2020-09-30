@@ -34,10 +34,20 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [`Work Sans\:300,400`, `Montserrat\:400`],
-        display: "swap",
+        fonts: {
+          google: [
+            {
+              family: "Work Sans",
+              variants: ["300", "400"],
+            },
+            {
+              family: "Montserrat",
+              variants: ["400"],
+            },
+          ],
+        },
       },
     },
     `gatsby-alias-imports`,
