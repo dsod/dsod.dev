@@ -41,7 +41,7 @@ async function handleEvent(event) {
         bypassCache: true,
       }
     }
-    else if (url.pathname.match(/(?:.js)$/)) {
+    else if (url.pathname.match(/\.(?:js|woff|woff2|webp)$/)) {
       options.cacheControl = {
         browserTTL: 31536000
       }

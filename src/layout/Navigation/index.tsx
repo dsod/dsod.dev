@@ -46,10 +46,8 @@ const Navigation: React.FC = () => {
     useOnScroll(
         () => {
             if (!pageSections.current) return;
-
             const currentBreakpoint = window.scrollY + activeSectionBreakpoint.current;
             pageSections.current.forEach((section, index) => {
-                if (!section?.offsetTop || !section.height) return;
                 if (
                     currentBreakpoint > section.offsetTop &&
                     currentBreakpoint < section.offsetTop + section.height
