@@ -19,9 +19,7 @@
     }
 
     &-main-link {
-        @include cta-button;
-        display: flex;
-        align-items: center;
+        
         height: 3rem;
         width: fit-content;
         border-radius: 1.5rem;
@@ -64,7 +62,6 @@
             }
 
             button {
-                @include cta-button;
                 height: auto;
                 width: auto;
                 display: flex;

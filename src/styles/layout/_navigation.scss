@@ -189,7 +189,6 @@ body {
 
     &-contact {
         &-button {
-            @include cta-button;
             padding: 0.5rem;
             position: fixed;
             bottom: 0rem;

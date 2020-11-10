@@ -7,15 +7,10 @@ const Footer = () => {
             <div className='row mb-3'>
                 <div className='d-flex align-items-center justify-content-center'>
                     <Icon
-                        src='linkedin-icon.svg'
-                        subFolder='external/'
+                        src='external/linkedin-icon.svg'
                         href='https://www.linkedin.com/in/daniel-s%C3%B6derling-333610121/'
                     />
-                    <Icon
-                        src='github-icon.svg'
-                        subFolder='external/'
-                        href='https://github.com/dsod'
-                    />
+                    <Icon src='external/github-icon.svg' href='https://github.com/dsod' />
                 </div>
             </div>
             <div className='row justify-content-center'>

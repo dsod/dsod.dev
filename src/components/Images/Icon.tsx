@@ -1,13 +1,11 @@
 import React, { useLayoutEffect } from 'react';
 
-type NavIconProps = {
+type NavIconProps = JSX.IntrinsicElements['svg'] & {
     src: string;
-    subFolder?: string;
-    classes?: string;
     href?: string;
 };
 
-const NavIcon = ({ src, subFolder = '', classes, href }: NavIconProps) => {
+const NavIcon = ({ src, href, ...props }: NavIconProps) => {
     const ImportedIconRef = React.useRef<React.FC<React.SVGProps<SVGSVGElement>>>();
     const [loading, setLoading] = React.useState(false);
 
@@ -16,7 +14,7 @@ const NavIcon = ({ src, subFolder = '', classes, href }: NavIconProps) => {
 
         const iconImport = async (): Promise<void> => {
             try {
-                ImportedIconRef.current = (await import('icons/' + subFolder + src)).default;
+                ImportedIconRef.current = (await import('icons/' + src)).default;
             } catch (err) {
                 throw err;
             } finally {
@@ -32,7 +30,7 @@ const NavIcon = ({ src, subFolder = '', classes, href }: NavIconProps) => {
 
     if (!loading && ImportedIconRef.current) {
         const { current: ImportedIcon } = ImportedIconRef;
-        return <ImportedIcon className={classes} onClick={() => handleClick(href)} />;
+        return <ImportedIcon onClick={() => handleClick(href)} {...props} />;
     }
 
     return null;

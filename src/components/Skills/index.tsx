@@ -20,9 +20,8 @@ const Skills = () => {
                                         <div key={`technical-${index}`} className='card-section'>
                                             <div className='card-header'>
                                                 <Icon
-                                                    src={skill.icon}
-                                                    subFolder='technologies/'
-                                                    classes='card-icon'
+                                                    src={`technologies/${skill.icon}`}
+                                                    className='card-icon'
                                                 />
                                                 <h4 className='h5'>{skill.category}</h4>
                                             </div>
@@ -34,8 +33,7 @@ const Skills = () => {
                                                             styles={{ borderColor: skill.color }}
                                                         >
                                                             <Icon
-                                                                src={technology.icon}
-                                                                subFolder='technologies/'
+                                                                src={`technologies/${technology.icon}`}
                                                             />
                                                             {technology.name}
                                                         </TechnologyListItem>

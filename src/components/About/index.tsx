@@ -32,11 +32,7 @@ const About = () => (
                         <div className='card mx-0 my-3 m-lg-3'>
                             <div className='card-wrapper'>
                                 <div className='card-header'>
-                                    <Icon
-                                        src='search-icon.svg'
-                                        subFolder='about/'
-                                        classes='card-icon'
-                                    />
+                                    <Icon src='about/search-icon.svg' className='card-icon' />
                                     <span className='card-title'>Positions of interrest</span>
                                 </div>
                                 <div className='card-body'>
@@ -56,11 +52,7 @@ const About = () => (
                         <div className='card mx-0 my-3 m-lg-3'>
                             <div className='card-wrapper'>
                                 <div className='card-header'>
-                                    <Icon
-                                        src='location-icon.svg'
-                                        subFolder='about/'
-                                        classes='card-icon'
-                                    />
+                                    <Icon src='about/location-icon.svg' className='card-icon' />
                                     <span className='card-title'>Location</span>
                                 </div>
                                 <div className='card-body'>

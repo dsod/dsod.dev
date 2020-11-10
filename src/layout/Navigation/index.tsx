@@ -4,7 +4,7 @@ import NavigationItems from 'content/navigation.json';
 import Progressbar from './Progressbar';
 import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
-import CallToActionButton from 'components/Shared/CallToActionButton';
+import Button from 'components/Shared/Button';
 
 type SectionPosition = {
     elementId: string;
@@ -89,7 +89,7 @@ const Navigation: React.FC = () => {
                                 className={index === activeSection ? 'active' : ''}
                             >
                                 {index != 0 ? <div className='navigation-separator'></div> : null}
-                                <Icon src={`${navItem.icon}`} subFolder='navigation/' />
+                                <Icon src={`navigation/${navItem.icon}`} />
                                 <a href={navItem.href}>{navItem.name}</a>
                             </li>
                         );
@@ -98,32 +98,34 @@ const Navigation: React.FC = () => {
             </div>
             {!navigationOpen ? (
                 <div className='navigation-contact-wrapper'>
-                    <CallToActionButton
-                        iconSrc='phone-icon.svg'
-                        iconSrcSubfolder='about/'
-                        classNames='navigation-contact-button m-2'
+                    <Button
+                        iconSrc='about/phone-icon.svg'
+                        className='navigation-contact-button m-2'
                         toggleElement='phone'
-                        label='Button to toggle phone number visibility'
+                        shape='circular'
+                        size='large'
+                        aria-label='Button to toggle phone number visibility'
                     >
                         <div id='phone' className='navigation-contact-popover'>
                             <a href='tel:+46(0)73 390 29 25'>
                                 +46&nbsp;(0)&nbsp;73&nbsp;390&nbsp;29&nbsp;25
                             </a>
                         </div>
-                    </CallToActionButton>
-                    <CallToActionButton
-                        iconSrc='email-icon.svg'
-                        iconSrcSubfolder='about/'
-                        classNames='navigation-contact-button m-2'
+                    </Button>
+                    <Button
+                        iconSrc='about/email-icon.svg'
+                        className='navigation-contact-button m-2'
                         toggleElement='email'
-                        label='Button to toggle email visibility'
+                        shape='circular'
+                        size='large'
+                        aria-label='Button to toggle email visibility'
                     >
                         <div id='email' className='navigation-contact-popover'>
                             <a href='mailto:d.soderling@live.se' className='mx-2'>
                                 d.soderling@live.se
                             </a>
                         </div>
-                    </CallToActionButton>
+                    </Button>
                 </div>
             ) : (
                 ''
@@ -135,9 +137,9 @@ const Navigation: React.FC = () => {
                 aria-label='Toggle Menu on Mobile'
             >
                 {navigationOpen ? (
-                    <Icon src='close-nav.svg' subFolder='navigation/' />
+                    <Icon src='navigation/close-nav.svg' />
                 ) : (
-                    <Icon src='open-nav.svg' subFolder='navigation/' />
+                    <Icon src='navigation/open-nav.svg' />
                 )}
             </button>
             <Progressbar />

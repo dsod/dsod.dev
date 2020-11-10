@@ -7,15 +7,20 @@ import About from '../components/About';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
+import StyledGlobal from 'styles/global';
+import { AppProviders } from 'context';
 
 const IndexPage = () => (
-    <Layout>
-        <SEO title='Daniel Söderling' />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-    </Layout>
+    <AppProviders>
+        <Layout>
+            <StyledGlobal />
+            <SEO title='Daniel Söderling' />
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+        </Layout>
+    </AppProviders>
 );
 
 export default IndexPage;

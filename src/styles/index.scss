@@ -1,11 +1,6 @@
 @import 'variables';
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-@import '~bootstrap/scss/reboot';
-@import '~bootstrap/scss/bootstrap-grid';
-@import 'base';
-@import './components/callToActionButton';
+@import 'mixins';
+@import '~rfs/scss';
 @import './layout/header';
 @import './layout/footer';
 @import './components/main';

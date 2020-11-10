@@ -3,7 +3,7 @@ import SectionHeader from '../Shared/SectionHeader';
 import Icon from 'components/Images/Icon';
 import Image from 'components/Images';
 import ProjectItems from 'content/projects.json';
-import CallToActionButton from 'components/Shared/CallToActionButton';
+import Button from 'components/Shared/Button';
 
 const Projects = () => {
     return (
@@ -44,16 +44,15 @@ const Projects = () => {
                                         <div className='card-section mb-0'>
                                             <div className='col-8 d-flex flex-wrap mb-4 project-main-links'>
                                                 {project.mainLinks.map((mainLink, index) => (
-                                                    <CallToActionButton
+                                                    <Button
                                                         key={`main-link-${index}`}
-                                                        iconSrc={mainLink.icon}
-                                                        iconSrcSubfolder='external/'
+                                                        iconSrc={`external/${mainLink.icon}`}
                                                         href={mainLink.url}
-                                                        classNames='project-main-link'
-                                                        label={`${project.name} link to ${mainLink.name}`}
+                                                        aria-label={`${project.name} link to ${mainLink.name}`}
+                                                        size='large'
                                                     >
                                                         <span>{mainLink.name}</span>
-                                                    </CallToActionButton>
+                                                    </Button>
                                                 ))}
                                             </div>
                                             <div className='card-body'>
@@ -74,8 +73,7 @@ const Projects = () => {
                                                                         className='ml-lg-auto'
                                                                     >
                                                                         <Icon
-                                                                            src={technology.icon}
-                                                                            subFolder='technologies/'
+                                                                            src={`technologies/${technology.icon}`}
                                                                         />
                                                                         {technology.name}
                                                                     </li>
@@ -106,27 +104,24 @@ const Projects = () => {
                                                                                         linkGroup,
                                                                                         index2
                                                                                     ) => (
-                                                                                        <CallToActionButton
+                                                                                        <Button
                                                                                             key={`link-${
                                                                                                 index +
                                                                                                 index2
                                                                                             }`}
-                                                                                            iconSrc={
-                                                                                                linkGroup.icon
-                                                                                            }
-                                                                                            iconSrcSubfolder='external/'
-                                                                                            classNames=''
+                                                                                            iconSrc={`external/${linkGroup.icon}`}
                                                                                             href={
                                                                                                 linkGroup.url
                                                                                             }
-                                                                                            label={`Link to ${link.name} ${linkGroup.type}`}
+                                                                                            aria-label={`Link to ${link.name} ${linkGroup.type}`}
+                                                                                            styling='link'
                                                                                         >
                                                                                             <span>
                                                                                                 {
                                                                                                     linkGroup.type
                                                                                                 }
                                                                                             </span>
-                                                                                        </CallToActionButton>
+                                                                                        </Button>
                                                                                     )
                                                                                 )}
                                                                             </div>
