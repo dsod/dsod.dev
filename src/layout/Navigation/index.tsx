@@ -5,6 +5,7 @@ import Progressbar from './Progressbar';
 import Icon from 'components/Images/Icon';
 import { useOnScroll } from 'hooks/useOnScroll';
 import Button from 'components/Shared/Button';
+import { useTheme } from 'emotion-theming';
 
 type SectionPosition = {
     elementId: string;
@@ -25,6 +26,8 @@ const Navigation: React.FC = () => {
 
     const pageSections = useRef<SectionPositions>();
     const activeSectionBreakpoint = useRef(0);
+
+    const {theme, isDarkMode, setIsDarkMode} = useTheme()
 
     useEffect(() => {
         activeSectionBreakpoint.current = window.innerHeight * 0.2;
@@ -126,11 +129,11 @@ const Navigation: React.FC = () => {
                             </a>
                         </div>
                     </Button>
+            <button onClick={() => setIsDarkMode(!isDarkMode)} css={{color: theme.colors.text}}>Change theme here</button>
                 </div>
             ) : (
                 ''
             )}
-
             <button
                 className='navigation-toggle'
                 onClick={toggleNavigation}

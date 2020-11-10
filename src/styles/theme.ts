@@ -1,4 +1,22 @@
-const colors = {
+
+type Color = {
+    text?: string,
+    header?: string,
+    background?: string,
+    mainBackground?: string,
+    headerBackground?: string,
+    primary?: string[],
+    grays?: string[],
+}
+
+type Colors = Color & {
+    modes: {
+        [key: string]: Color
+    }
+
+}
+
+const colors: Colors = {
     text: '#e2e2e2',
     header: '#b6b6b6',
     background: '#262626',
@@ -9,7 +27,7 @@ const colors = {
     // secondary: '#00a',
     // highlight: '#ededff',
     primary: ['#33ADFF', '#0A9DFF', '#0082d8', '#006EB8', '#00568F', '#003D66'],
-    gray: [
+    grays: [
         '#D6D6D6',
         '#C2C2C2',
         '#ADADAD',
@@ -22,65 +40,48 @@ const colors = {
     ],
     modes: {
         dark: {
-            text: '#fff',
+            text: '#000',
             background: '#000',
-            primary: '#0cf',
-            secondary: '#f0e',
-            gray: '#222',
-            lightgray: '#111',
-            highlight: '#001119',
         },
         light: {
             text: '#fff',
             background: '#000',
-            primary: '#0cf',
-            secondary: '#f0e',
-            gray: '#222',
-            lightgray: '#111',
-            highlight: '#001119',
         },
     },
 };
 
-const prism = {
-    [['.comment', '.prolog', '.doctype', '.cdata']]: {
-        color: 'midgray',
-    },
-    '.punctuation': {
-        color: 'midgray',
-    },
-    [['.property', '.tag', '.constant', '.symbol', '.deleted']]: {
-        color: 'primary',
-    },
-    [['.boolean', '.number']]: {
-        color: 'secondary',
-    },
-    [['.selector', '.attr-name', '.string', '.char', '.builtin', '.inserted']]: {
-        color: 'accent',
-    },
-    [['.operator', '.entity', '.url', '.string', '.variable']]: {
-        color: 'accent',
-    },
-    [['.atrule', '.attr-value', '.function']]: {
-        color: 'primary',
-    },
-    '.keyword': {
-        color: 'primary',
-    },
-    '.regex': {},
-    '.important': {},
-};
+const shadows = {
+
+}
+
+const borders = {
+
+}
+
+const radii = {
+
+}
+
+const buttons = {
+
+}
 
 export default {
     initialColorModeName: 'light',
     colors,
+    shadows,
+    borders,
+    radii,
+    buttons,
     fonts: {
         body: 'system-ui, sans-serif',
         monospace: 'Menlo, monospace',
     },
     fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
+    spacing: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72 , 80],
+    breakpoints: ['576px', '768px', '992px', '1200px', '1400px'],
     lineHeights: {
-        body: 1.75,
+        body: 1.5,
         heading: 1.25,
     },
     styles: {
@@ -149,7 +150,6 @@ export default {
             my: 3,
             bg: 'lightgray',
             overflowX: 'auto',
-            ...prism,
         },
         code: {
             fontFamily: 'monospace',
@@ -159,13 +159,6 @@ export default {
             fontFamily: 'monospace',
             color: 'secondary',
             fontSize: '87.5%',
-        },
-        ul: {
-            pl: 3,
-            ul: {
-                // pl: 2
-                // textIndent: '1em',
-            },
         },
     },
 };
