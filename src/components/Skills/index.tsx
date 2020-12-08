@@ -26,21 +26,27 @@ const Skills = () => {
                                                 />
                                                 <h4 className='h5'>{skill.category}</h4>
                                             </div>
-                                            <div className='card-body'>
-                                                <ul>
-                                                    {skill.technology.map((technology, index) => (
-                                                        <TechnologyListItem
-                                                            key={`technology-${index}`}
-                                                            styles={{ borderColor: skill.color }}
-                                                        >
-                                                            <Icon
-                                                                src={technology.icon}
-                                                                subFolder='technologies/'
-                                                            />
-                                                            {technology.name}
-                                                        </TechnologyListItem>
-                                                    ))}
-                                                </ul>
+                                            <div className='row'>
+                                                <div className='card-body'>
+                                                    <ul>
+                                                        {skill.technology.map(
+                                                            (technology, index) => (
+                                                                <TechnologyListItem
+                                                                    key={`technology-${index}`}
+                                                                    styles={{
+                                                                        borderColor: skill.color,
+                                                                    }}
+                                                                >
+                                                                    <Icon
+                                                                        src={technology.icon}
+                                                                        subFolder='technologies/'
+                                                                    />
+                                                                    {technology.name}
+                                                                </TechnologyListItem>
+                                                            )
+                                                        )}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     ))}

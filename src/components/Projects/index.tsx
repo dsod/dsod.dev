@@ -12,7 +12,7 @@ const Projects = () => {
                 <div className='col-8 col-md-7 col-lg-6'>
                     <SectionHeader section='Projects' />
                     <div className='row justify-content-center'>
-                        <div className='col-8 col-md-6 col-xl-5'>
+                        <div className='col-10 col-md-9 col-xl-8'>
                             {ProjectItems.map((project, index) => (
                                 <div key={`project-${index}`} className='project card my-3 m-lg-3'>
                                     {project.image ? (
@@ -24,10 +24,14 @@ const Projects = () => {
                                                 />
                                             </div>
                                             <div className='card-image-overlay'>
-                                                <div className='card-image-overlay-text'>
-                                                    scrollable
-                                                    <Icon src='arrow-down.svg' />
-                                                </div>
+                                                {project.scrollable ? (
+                                                    <div className='card-image-overlay-text'>
+                                                        scrollable
+                                                        <Icon src='arrow-down.svg' />
+                                                    </div>
+                                                ) : (
+                                                    ''
+                                                )}
                                             </div>
                                         </div>
                                     ) : (
@@ -58,87 +62,89 @@ const Projects = () => {
                                             </div>
                                             <div className='card-body'>
                                                 <div className='row'>
-                                                    <div className='col-8 col-lg-5'>
-                                                        <p>{project.description}</p>
-                                                    </div>
-                                                    <div className='col-8 col-lg-3'>
-                                                        <ul className='flex-lg-column justify-content-lg-end'>
-                                                            {project.technologies.map(
-                                                                (technology, index) => (
-                                                                    <li
-                                                                        key={`technology-${index}`}
-                                                                        style={{
-                                                                            borderColor:
-                                                                                technology.color,
-                                                                        }}
-                                                                        className='ml-lg-auto'
-                                                                    >
+                                                    <p>{project.description}</p>
+                                                </div>
+                                                <div className='row'>
+                                                    <ul className='px-2 my-4'>
+                                                        {project.technologies.map(
+                                                            (technology, index) => (
+                                                                <li
+                                                                    key={`technology-${index}`}
+                                                                    style={{
+                                                                        borderColor:
+                                                                            technology.color,
+                                                                    }}
+                                                                >
+                                                                    {technology.icon ? (
                                                                         <Icon
                                                                             src={technology.icon}
                                                                             subFolder='technologies/'
                                                                         />
-                                                                        {technology.name}
+                                                                    ) : (
+                                                                        ''
+                                                                    )}
+
+                                                                    {technology.name}
+                                                                </li>
+                                                            )
+                                                        )}
+                                                    </ul>
+                                                </div>
+                                                {project.projectLinks.length ? (
+                                                    <div className='row'>
+                                                        <h5>Course Assignments</h5>
+                                                        <ul
+                                                            className='project-additional-links col-8 px-2'
+                                                            key={`link-${index}`}
+                                                        >
+                                                            {project.projectLinks.map(
+                                                                (link, index) => (
+                                                                    <li
+                                                                        className='project-additional-link'
+                                                                        key={`link-${index}`}
+                                                                    >
+                                                                        <div className='col-8'>
+                                                                            <h6>{link.name}</h6>
+                                                                        </div>
+
+                                                                        <div className='project-button-wrapper col-8 d-flex justify-content-start flex-wrap'>
+                                                                            {link.urls.map(
+                                                                                (
+                                                                                    linkGroup,
+                                                                                    index2
+                                                                                ) => (
+                                                                                    <CallToActionButton
+                                                                                        key={`link-${
+                                                                                            index +
+                                                                                            index2
+                                                                                        }`}
+                                                                                        iconSrc={
+                                                                                            linkGroup.icon
+                                                                                        }
+                                                                                        iconSrcSubfolder='external/'
+                                                                                        classNames=''
+                                                                                        href={
+                                                                                            linkGroup.url
+                                                                                        }
+                                                                                        label={`Link to ${link.name} ${linkGroup.type}`}
+                                                                                    >
+                                                                                        <span>
+                                                                                            {
+                                                                                                linkGroup.type
+                                                                                            }
+                                                                                        </span>
+                                                                                    </CallToActionButton>
+                                                                                )
+                                                                            )}
+                                                                        </div>
                                                                     </li>
                                                                 )
                                                             )}
                                                         </ul>
                                                     </div>
-                                                    {project.projectLinks.length ? (
-                                                        <div className='col-8'>
-                                                            <h5>Course Assignments</h5>
-                                                            <ul
-                                                                className='project-additional-links col-8'
-                                                                key={`link-${index}`}
-                                                            >
-                                                                {project.projectLinks.map(
-                                                                    (link, index) => (
-                                                                        <li
-                                                                            className='project-additional-link'
-                                                                            key={`link-${index}`}
-                                                                        >
-                                                                            <div className='col-8'>
-                                                                                <h6>{link.name}</h6>
-                                                                            </div>
-
-                                                                            <div className='project-button-wrapper col-8 d-flex justify-content-start flex-wrap'>
-                                                                                {link.urls.map(
-                                                                                    (
-                                                                                        linkGroup,
-                                                                                        index2
-                                                                                    ) => (
-                                                                                        <CallToActionButton
-                                                                                            key={`link-${
-                                                                                                index +
-                                                                                                index2
-                                                                                            }`}
-                                                                                            iconSrc={
-                                                                                                linkGroup.icon
-                                                                                            }
-                                                                                            iconSrcSubfolder='external/'
-                                                                                            classNames=''
-                                                                                            href={
-                                                                                                linkGroup.url
-                                                                                            }
-                                                                                            label={`Link to ${link.name} ${linkGroup.type}`}
-                                                                                        >
-                                                                                            <span>
-                                                                                                {
-                                                                                                    linkGroup.type
-                                                                                                }
-                                                                                            </span>
-                                                                                        </CallToActionButton>
-                                                                                    )
-                                                                                )}
-                                                                            </div>
-                                                                        </li>
-                                                                    )
-                                                                )}
-                                                            </ul>
-                                                        </div>
-                                                    ) : (
-                                                        ''
-                                                    )}
-                                                </div>
+                                                ) : (
+                                                    ''
+                                                )}
                                             </div>
                                         </div>
                                     </div>

@@ -3,6 +3,7 @@
         "name": "tittstudio",
         "category": "Company Website",
         "description": "The company website of a lighting & interior architecture firm. The backend is built with WordPress, SQL, and twig for server-side page rendering. The frontend is built with vanilla javascript and SCSS, bundled with webpack. The development environment is run through docker containers. The pages are built with reusable components and are managed by the company through the WordPress CMS.",
+        "scrollable": true,
         "image": "tittstudio.png",
         "mainLinks": [
             {
@@ -49,6 +50,7 @@
         "name": "dsod.dev",
         "category": "Personal Portfolio Website",
         "image": "",
+        "scrollable": false,
         "description": "The website you are currently on. I've built it with modern development tools such as gatsbyjs, react hooks, and parts of bootstrap 5 (grid & reboot). I prototyped and created assets in Adobe XD, before starting development and i've used mobile-first design & implementation throughout the process. ",
         "mainLinks": [
             {
@@ -82,9 +84,73 @@
         ]
     },
     {
+        "name": "Epic React",
+        "category": "Online Course",
+        "image": "epicreact.png",
+        "scrollable": false,
+        "description": "Epic React is an intermediate- to advanced course in React and front end development. React fundamentals, advanced component and hook patterns, and even unit/integration/e2e testing is a small part of what you learn in the course. \n\nAfter completing it, I feel incredibly confident and empowered in my React abilities. Knowledge of when to use which tool at my disposal allows me to create performant and scalable applications.",
+        "mainLinks": [
+            {
+                "name": "Course Site",
+                "url": "https://epicreact.dev",
+                "icon": "external-link-icon.svg"
+            }
+        ],
+        "projectLinks": [],
+        "technologies": [
+            {
+                "name": "Javascript",
+                "icon": "javascript-icon.svg",
+                "color": "#D39E17"
+            },
+            {
+                "name": "Typescript",
+                "icon": "typescript-icon.svg",
+                "color": "#D39E17"
+                
+            },
+            {
+                "name": "CSS",
+                "icon": "",
+                "color": "#D39E17"
+            },
+            {
+                "name": "React",
+                "icon": "react-icon.svg",
+                "color": "#37AE6F"
+            },
+            {
+                "name": "React Query",
+                "icon": "react-query.svg",
+                "color": "#37AE6F"
+            },
+            {
+                "name": "Emotion",
+                "icon": "",
+                "color": "#37AE6F"
+            },
+            {
+                "name": "React Testing Library",
+                "icon": "",
+                "color": "#37AE6F"
+            },
+            {
+                "name": "JEST",
+                "icon": "jest-icon.svg",
+                "color": "#37AE6F"
+            },
+            {
+                "name": "Cypress",
+                "icon": "cypress-icon.svg",
+                "color": "#37AE6F"
+            }
+        ]
+    },
+    {
         "name": "freeCodeCamp - Front End Libraries",
         "category": "Online Course",
         "image": "",
+        "scrollable": false,
         "description": "The 300-hour course contains hands-on exercises for learning front-end libraries, such as Bootstrap, SCSS, jQuery, React, and Redux. When introducing each technology you code in an online IDE and have to complete automated tests to go through each section in the course. Finishing up you have to create 5 different pet projects in a development environment of your own choosing and use their testing library in order to verify the functionality of the application. Upon completion, you receive a certification (see links below).",
         "mainLinks": [
             {
